@@ -9,17 +9,17 @@
     <style>
         /* Визначення кольорів */
         :root {
-            --primary-green: #38b2ac; /* Насичений бірюзовий (для лого, великого тексту) */
-            --light-green-bg: #e0f6f6; /* Дуже світлий фон навколо основного блоку */
+            --primary-green: #38b2ac; /* Насичений бірюзовий (для лого) */
+            --light-green-bg: #e0f6f6; /* фон навколо основного блоку (0 сторінка) */
             --card-green: #90d3c6; /* Бірюзовий фон форми */
             --button-green: #68bda9; /* Колір кнопки */
-            --main-bg: #fff; /* Фон основного контейнера */
+            --main-bg: #F6F5F3; /* Фон основного контейнера (беж)*/
         }
 
         /* === Основні стилі сторінки === */
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Roboto', sans-serif; }
         body {
-            background-color: var(--light-green-bg);
+            background-color: var(--main-bg);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -63,12 +63,17 @@
 
         .logo {
             display: flex;
-            align-items: center;
+            flex-direction: column; /* Розташовуємо колбу зверху, текст під нею */
+            align-items: center;/* Центруємо по горизонталі */
             font-weight: 700;
             color: var(--primary-green);
             font-size: 1.5em;
         }
-        .logo i { margin-right: 8px; font-size: 1.5em; } /* Іконка колби */
+        .logo-icon {
+            width: 40px;   /* Можна змінити розмір картинки */
+            height: auto;
+            margin-bottom: 5px; /* Відстань між картинкою і текстом */
+}
 
         .nav-links a {
             margin: 0 15px;
@@ -206,7 +211,8 @@
 <div class="page-wrapper">
     <header class="navbar">
         <div class="logo">
-            <i class="fas fa-flask"></i> <span>medDecode</span>
+            <img src="images/colba.png" alt="Колба" class="logo-icon">
+            <span>medDecode</span>
         </div>
         <nav class="nav-links">
             <a href="#">HOME</a>
