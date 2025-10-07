@@ -33,7 +33,7 @@
             margin: 20px auto;
             background: url('images/Rectangle_beigef.png') no-repeat center/cover;
             border-radius: 20px;
-            padding: 15px 30px;
+            padding: 50px 30px;
         }
 
         .top-content {
@@ -138,27 +138,28 @@
         .signup-button:hover { background: #5fb19d; }
 
         .logo {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            font-weight: 700;
-            color: var(--main-green);
-            font-size: 1.5em;
-            margin: 20px;
+            display: flex;/* робимо флекс-контейнер, щоб розташувати колбу і текст вертикально */
+            flex-direction: column;/* колба зверху, текст під нею */
+            align-items: center;/* центруємо по горизонталі всередині контейнера */
+            font-weight: 700;/* товщина шрифту тексту */
+            color: var(--main-green);/* колір тексту */
+            font-size: 1.5em;/* розмір тексту */
+            margin: 50px;/* відступи зовні (всі боки) */
         }
 
+
         .logo-icon {
-            width: 40px;
-            height: auto;
-            margin-bottom: 5px;
+            width: 40px;/* Ширина картинки (колби) */
+            height: auto; /* Висота автоматично підлаштовується під ширину (зберігає пропорції) */
+            margin-bottom: 5px;/* Відстань між картинкою і текстом під нею */
         }
 
         .doctor-image {
-            max-width: 400px;
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-            margin: 20px;
+            max-width: 800px;  /* Збільшити розмір */
+            width: 100%;/* Картинка займає всю ширину контейнера */
+            height: auto;/* Автоматично зберігає пропорції висоти */
+            object-fit: cover;/* Обрізає картинку, щоб заповнити блок без спотворення */
+            margin: 20px;/* Відступи зверху, справа, знизу, зліва (20px) */
         }
 
         /* Медіа-запити */
