@@ -1,221 +1,219 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>medDecode - Реєстрація</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-        /* Визначення кольорів */
-        :root {
-            --primary-green: #38b2ac; 
-            --main-green: #067667; 
-            --card-green: #EDFDF9; 
-            --button-green: #68bda9;
-            --main-bg: #fff; 
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>medDecode - Реєстрація</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --main-bg: #fff;
+    --primary-green: #38b2ac;
+    --main-green: #067667;
+    --card-bg: #EDFDF9;
+    --button-green: #68bda9;
+}
 
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Roboto', sans-serif; }
-        body {
-            background-color: var(--main-bg);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 50px 20px;
-            min-height: 100vh;
-        }
+* { box-sizing: border-box; margin:0; padding:0; font-family:'Roboto',sans-serif; }
 
-        /* Верхній прямокутник навігації */
-        .top-rectangle {
-            width: 90%;
-            max-width: 1200px;
-            margin: 20px auto;
-            background: url('images/Rectangle_beigef.png') no-repeat center/cover;
-            border-radius: 20px;
-            padding: 15px 30px;
-        }
+body {
+    background-color: var(--main-bg);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:50px 20px;
+}
 
-        .top-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
+/* Верхня панель */
+.top-rectangle {
+    width: 90%;
+    max-width:1200px;
+    margin-bottom:40px;
+    background: url('images/Rectangle_beigef.png') no-repeat center/cover;
+    border-radius:20px;
+    padding:15px 30px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-        .top-logo {
-            width: 40px;
-            height: auto;
-            margin-right: 10px;
-        }
+.top-left {
+    display:flex;
+    align-items:center;
+}
 
-        .top-title {
-            font-weight: 700;
-            font-size: 1.5em;
-            color: var(--main-green); 
-        }
+.top-left img {
+    width:40px;
+    height:auto;
+    margin-right:10px;
+}
 
-        .top-nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #555;
-            font-weight: 500;
-            text-transform: uppercase;
-        }
+.top-left span {
+    font-weight:700;
+    font-size:1.5em;
+    color: var(--main-green);
+}
 
-        /* Основний блок з реєстрацією та лікарем на Rectangle_greenr.png */
-        .visual-block {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            width: 90%;
-            max-width: 1200px;
-            background: url('images/Rectangle_greenr.png') no-repeat center/cover;
-            border-radius: 25px;
-            padding: 40px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-        }
+.top-nav a {
+    margin:0 15px;
+    text-decoration:none;
+    color:#555;
+    font-weight:500;
+    text-transform:uppercase;
+}
 
-        .registration-area {
-            flex: 1;
-            padding: 30px;
-            background-color: var(--card-green);
-            border-radius: 20px;
-            margin: 20px;
-            max-width: 450px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
-        }
+.top-right i {
+    margin-left:15px;
+    font-size:1.2em;
+    color:#555;
+}
 
-        .registration-area h2 {
-            color: #333;
-            font-size: 1.1em;
-            font-weight: 500;
-            margin-bottom: 30px;
-            line-height: 1.4;
-        }
+/* Основний блок */
+.visual-block {
+    width:90%;
+    max-width:1200px;
+    display:flex;
+    border-radius:25px;
+    overflow:hidden;
+    background: url('images/Rectangle_greenr.png') no-repeat center/cover;
+    padding:40px;
+    justify-content: space-between;
+    align-items:center;
+}
 
-        .input-group {
-            background-color: rgba(255, 255, 255, 0.8);
-            border-radius: 10px;
-            margin-bottom: 18px;
-            position: relative;
-        }
+/* Ліва частина: форма реєстрації */
+.registration-area {
+    background-color: var(--card-bg);
+    border-radius:20px;
+    padding:30px;
+    max-width:350px;
+    width:100%;
+    box-shadow:0 4px 15px rgba(0,0,0,0.1);
+}
 
-        .registration-area input {
-            width: 100%;
-            padding: 15px 20px;
-            border: none;
-            border-radius: 10px;
-            font-size: 1em;
-            background: transparent;
-            outline: none;
-        }
+.registration-area h2 {
+    font-size:1.1em;
+    font-weight:500;
+    margin-bottom:25px;
+    color:#333;
+}
 
-        .password-toggle {
-            position: absolute;
-            right: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            cursor: pointer;
-            color: #888;
-        }
+.input-group {
+    margin-bottom:15px;
+    border-radius:10px;
+    overflow:hidden;
+    background: #fff;
+}
 
-        .signup-button {
-            width: 60%;
-            padding: 12px;
-            background: var(--button-green);
-            color: #fff;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            font-weight: 500;
-            font-size: 1.1em;
-            display: block;
-            margin: 20px auto 0;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            transition: background-color 0.3s;
-        }
-        .signup-button:hover { background: #5fb19d; }
+.registration-area input {
+    width:100%;
+    padding:12px 15px;
+    border:none;
+    font-size:1em;
+    outline:none;
+}
 
-        .logo {
-            display: flex;/* робимо флекс-контейнер, щоб розташувати колбу і текст вертикально */
-            flex-direction: column;/* колба зверху, текст під нею */
-            align-items: center;/* центруємо по горизонталі всередині контейнера */
-            font-weight: 700;/* товщина шрифту тексту */
-            color: var(--main-green);/* колір тексту */
-            font-size: 1.5em;/* розмір тексту */
-            margin: 20px;/* відступи зовні (всі боки) */
-        }
+.password-toggle {
+    position:absolute;
+    right:10px;
+    top:50%;
+    transform: translateY(-50%);
+    cursor:pointer;
+    color:#888;
+}
 
+.signup-button {
+    width:100%;
+    padding:12px;
+    background: var(--button-green);
+    color:#fff;
+    border:none;
+    border-radius:10px;
+    font-weight:500;
+    cursor:pointer;
+    transition:0.3s;
+}
+.signup-button:hover {
+    background:#5fb19d;
+}
 
-        .logo-icon {
-            width: 40px;/* Ширина картинки (колби) */
-            height: auto; /* Висота автоматично підлаштовується під ширину (зберігає пропорції) */
-            margin-bottom: 5px;/* Відстань між картинкою і текстом під нею */
-        }
+/* Логотип всередині */
+.center-logo {
+    text-align:center;
+    font-size:2em;
+    font-weight:700;
+    color:var(--main-green);
+    flex:1;
+}
 
-        .doctor-image {
-            max-width: 800px;  /* Збільшити розмір */
-            width: 100%;/* Картинка займає всю ширину контейнера */
-            height: auto;/* Автоматично зберігає пропорції висоти */
-            object-fit: cover;/* Обрізає картинку, щоб заповнити блок без спотворення */
-            margin: 20px;/* Відступи зверху, справа, знизу, зліва (20px) */
-        }
+/* Зображення лікаря */
+.doctor-image {
+    max-width:300px;
+    width:100%;
+    object-fit:cover;
+    border-radius:15px;
+}
 
-        /* Медіа-запити */
-        @media (max-width: 900px) {
-            .visual-block { flex-direction: column; padding: 20px; }
-            .registration-area { max-width: 100%; margin: 10px 0; }
-            .doctor-image { max-width: 100%; margin: 10px 0; }
-        }
-    </style>
+@media(max-width:900px){
+    .visual-block {
+        flex-direction:column;
+        padding:20px;
+    }
+    .doctor-image {
+        margin-top:20px;
+        max-width:80%;
+    }
+    .registration-area {
+        max-width:100%;
+        margin-bottom:20px;
+    }
+}
+</style>
 </head>
-
 <body>
 
-<!-- Верхній прямокутник з навігацією -->
+<!-- Верхній прямокутник навігації -->
 <div class="top-rectangle">
-    <div class="top-content">
-        <img src="images/colba.png" alt="Колба" class="top-logo">
-        <span class="top-title">medDecode</span>
-        <nav class="top-nav">
-            <a href="#">HOME</a>
-            <a href="#">SERVISE</a>
-            <a href="#">CONTACTS</a>
-        </nav>
+    <div class="top-left">
+        <img src="images/colba.png" alt="Колба">
+        <span>medDecode</span>
+    </div>
+    <div class="top-nav">
+        <a href="#">HOME</a>
+        <a href="#">SERVISE</a>
+        <a href="#">CONTACTS</a>
+    </div>
+    <div class="top-right">
+        <i class="fas fa-user-circle"></i>
+        <i class="fas fa-globe"></i>
     </div>
 </div>
 
-<!-- Основний блок: Rectangle_greenr.png -->
+<!-- Основний блок -->
 <div class="visual-block">
-    <!-- Ліва частина: реєстрація -->
     <div class="registration-area">
         <h2>Register and receive a transcript of your tests online</h2>
         <form>
             <div class="input-group">
-                <input type="text" name="name" placeholder="Name" required>
+                <input type="text" placeholder="Name" required>
             </div>
             <div class="input-group">
-                <input type="text" name="lastname" placeholder="Last name" required>
+                <input type="text" placeholder="Last name" required>
             </div>
             <div class="input-group">
-                <input type="email" name="email" placeholder="Email" required>
+                <input type="email" placeholder="Email" required>
             </div>
             <div class="input-group">
-                <input type="password" name="password" placeholder="Password" required>
+                <input type="password" placeholder="Password" required>
                 <span class="password-toggle"><i class="far fa-eye"></i></span>
             </div>
             <button type="submit" class="signup-button">Sign up</button>
         </form>
     </div>
 
-    <!-- Логотип між реєстрацією і лікарем -->
-    <div class="logo">
-        <img src="images/colba.png" alt="Колба" class="logo-icon">
-        <span>medDecode</span>
-    </div>
+    <div class="center-logo">medDecode</div>
 
-    <!-- Права частина: лікар -->
     <img src="images/doctor0.png" alt="Doctor" class="doctor-image">
 </div>
 
