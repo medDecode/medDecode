@@ -7,128 +7,108 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         /* === Основні стилі сторінки === */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Roboto', sans-serif;
-        }
-
-        body {
-            background: #f5f5f5;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Roboto', sans-serif; }
+        body { background: #f5f5f5; }
 
         /* === Верхня панель навігації (Navbar) === */
         header.navbar {
             display: flex;
-            justify-content: space-between; /* логотип зліва, меню справа */
+            justify-content: space-between; 
             align-items: center;
             padding: 20px 50px;
             background-color: #fff;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
-        /* === Посилання у меню === */
-        .nav-links a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-        }
+        .nav-links a { margin: 0 15px; text-decoration: none; color: #333; font-weight: 500; }
 
         /* === Основний контейнер сторінки === */
-        .main-container {
+        .main-container-wrapper {
+            position: relative;
             display: flex;
             justify-content: center;
-            align-items: flex-start;
             padding: 50px;
-            gap: 50px; /* відстань між формою і блоком з картинкою */
+        }
+
+        /* === Прямокутник фону === */
+        .background-rectangle {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%; /* ширина прямокутника */
+            height: 500px; /* висота прямокутника, підбирай під свій дизайн */
+            background: url('images/Rectangle_greenr.png') no-repeat center/cover;
+            border-radius: 15px;
+            z-index: 0;
+        }
+
+        .main-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 50px;
+            position: relative;
+            z-index: 1; /* щоб контент був поверх фону */
+            width: 90%;
         }
 
         /* === Блок реєстрації === */
         .registration-card {
-            background: #fff;
+            background: transparent; /* фон вже є в Rectangle */
             padding: 40px;
             border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             width: 350px;
+            color: #fff; /* якщо прямокутник темний, текст буде видно */
         }
 
-        /* Заголовок у формі */
-        .registration-card h2 {
-            margin-bottom: 25px;
-            font-size: 18px;
-        }
-
-        /* Поля введення (Name, Last Name, Email, Password) */
+        .registration-card h2 { margin-bottom: 25px; font-size: 18px; }
         .registration-card input {
-            width: 100%;
-            padding: 10px 15px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            width: 100%; padding: 10px 15px; margin-bottom: 15px;
+            border: 1px solid #ccc; border-radius: 5px;
         }
-
-        /* Кнопка "Sign up" */
         .signup-button {
-            width: 100%;
-            padding: 12px;
-            background: #007BFF;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
+            width: 100%; padding: 12px; background: #007BFF; color: #fff; border: none; border-radius: 5px;
+            cursor: pointer; font-weight: bold;
         }
+        .signup-button:hover { background: #0056b3; }
 
-        /* Ефект при наведенні на кнопку */
-        .signup-button:hover {
-            background: #0056b3;
-        }
-
-        /* === Блок з назвою MEDDECODE і зображенням лікаря === */
+        /* === Блок назви сайту і лікаря === */
         .image-text-block {
-            text-align: center;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: flex-end; /* вирівнює контент праворуч */
-            position: relative;
-            top: 150px; /* трохи нижче вниз */
+            align-items: flex-end;
+            text-align: right;
         }
-
-        .image-text-block h1 {
-            font-size: 36px;
-            color: #333;
-            margin-bottom: 20px;
-        }
-
+        .image-text-block h1 { font-size: 36px; color: #fff; margin-bottom: 20px; }
         .image-text-block img {
             max-width: 300px;
             border-radius: 10px;
-            margin-right: 50px; /* трохи відступ від правого краю */
+            margin-left: 50px; /* відсунули вправо */
         }
     </style>
 </head>
 
 <body>
 
-    <!-- === Верхня панель сайту (логотип + меню) === -->
-    <header class="navbar">
-        <div class="logo">
-            <span style="font-weight:bold; font-size:20px;">medDecode</span>
-        </div>
-        <nav class="nav-links">
-            <a href="#">HOME</a>
-            <a href="#">SERVISE</a>
-            <a href="#">CONTACTS</a>
-        </nav>
-    </header>
+<header class="navbar">
+    <div class="logo"><span style="font-weight:bold; font-size:20px;">medDecode</span></div>
+    <nav class="nav-links">
+        <a href="#">HOME</a>
+        <a href="#">SERVISE</a>
+        <a href="#">CONTACTS</a>
+    </nav>
+</header>
 
-    <!-- === Основна частина сторінки === -->
+<!-- === Обгортка для фону + контенту === -->
+<div class="main-container-wrapper">
+    <!-- Прямокутник фону -->
+    <div class="background-rectangle"></div>
+
+    <!-- Контейнер з формою та блоком назви/лікаря -->
     <div class="main-container">
 
-        <!-- Форма реєстрації користувача -->
+        <!-- Форма реєстрації -->
         <div class="registration-card">
             <h2>Register and receive a transcript of your tests online</h2>
             <form>
@@ -145,7 +125,9 @@
             <h1>medDecode</h1>
             <img src="images/doctor0.png" alt="Doctor">
         </div>
+
     </div>
+</div>
 
 </body>
 </html>
