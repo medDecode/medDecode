@@ -1,1 +1,223 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>medDecode - Структура</title>
+<style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    
+    /* Верхній блок */
+    header.top-rectangle {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    header.top-rectangle span, header.top-rectangle a {
+        margin: 0 10px;
+    }
+
+    /* Основний блок: лікар і таблиця */
+    .main-section {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        align-items: flex-start;
+        margin-bottom: 50px;
+    }
+
+    .doctor-center {
+        text-align: center;
+    }
+    .doctor-center .center-logo { font-weight: bold; font-size: 24px; margin-bottom: 10px; }
+    .doctor-center .doctor-image { font-size: 18px; }
+
+    .table-container {
+        max-width: 600px;
+    }
+    table, th, td {
+        border: 1px solid #333;
+        border-collapse: collapse;
+        padding: 8px;
+        text-align: center;
+    }
+    th { background-color: #eee; }
+    input, select { width: 100%; box-sizing: border-box; }
+
+    .buttons-container {
+        margin-top: 10px;
+        text-align: left;
+    }
+    .buttons-container button {
+        margin-right: 10px;
+        padding: 8px 15px;
+    }
+
+    /* Нижній блок */
+    .footer-section {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 50px;
+    }
+    .footer-section .contact-us { text-align: center; flex: 1; }
+    .footer-section .service { text-align: left; flex: 1; }
+</style>
+</head>
+<body>
+
+<!-- Верхній блок -->
+<header class="top-rectangle">
+    <span>medDecode</span> |
+    <a href="#">HOME</a> |
+    <a href="#">SERVISE</a> |
+    <a href="#">CONTACTS</a> |
+    <span>User Icon | Language Icon</span>
+</header>
+
+<!-- Основний блок -->
+<div class="main-section">
+    <!-- Центр: Логотип + Doctor Image -->
+    <div class="doctor-center">
+        <div class="center-logo">medDecode</div>
+        <div class="doctor-image">Doctor Image</div>
+    </div>
+
+    <!-- Праворуч: Decoding of analyzes + таблиця + кнопки -->
+    <div class="table-container">
+        <h3>Decoding of analyzes</h3>
+        <form id="analyzerForm">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name of indicators</th>
+                        <th>Result</th>
+                        <th>Norm in units (SI)</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- 5 рядків -->
+                    <tr>
+                        <td>
+                            <select name="indicator0" required>
+                                <option value="Гемоглобін">Гемоглобін</option>
+                                <option value="Глюкоза">Глюкоза</option>
+                                <option value="Холестерин">Холестерин</option>
+                                <option value="Тиск">Тиск</option>
+                            </select>
+                        </td>
+                        <td><input type="number" name="value0" step="0.1" required></td>
+                        <td><input type="text" name="norm0" readonly></td>
+                        <td><input type="text" name="status0" readonly></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select name="indicator1" required>
+                                <option value="Гемоглобін">Гемоглобін</option>
+                                <option value="Глюкоза">Глюкоза</option>
+                                <option value="Холестерин">Холестерин</option>
+                                <option value="Тиск">Тиск</option>
+                            </select>
+                        </td>
+                        <td><input type="number" name="value1" step="0.1" required></td>
+                        <td><input type="text" name="norm1" readonly></td>
+                        <td><input type="text" name="status1" readonly></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select name="indicator2" required>
+                                <option value="Гемоглобін">Гемоглобін</option>
+                                <option value="Глюкоза">Глюкоза</option>
+                                <option value="Холестерин">Холестерин</option>
+                                <option value="Тиск">Тиск</option>
+                            </select>
+                        </td>
+                        <td><input type="number" name="value2" step="0.1" required></td>
+                        <td><input type="text" name="norm2" readonly></td>
+                        <td><input type="text" name="status2" readonly></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select name="indicator3" required>
+                                <option value="Гемоглобін">Гемоглобін</option>
+                                <option value="Глюкоза">Глюкоза</option>
+                                <option value="Холестерин">Холестерин</option>
+                                <option value="Тиск">Тиск</option>
+                            </select>
+                        </td>
+                        <td><input type="number" name="value3" step="0.1" required></td>
+                        <td><input type="text" name="norm3" readonly></td>
+                        <td><input type="text" name="status3" readonly></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select name="indicator4" required>
+                                <option value="Гемоглобін">Гемоглобін</option>
+                                <option value="Глюкоза">Глюкоза</option>
+                                <option value="Холестерин">Холестерин</option>
+                                <option value="Тиск">Тиск</option>
+                            </select>
+                        </td>
+                        <td><input type="number" name="value4" step="0.1" required></td>
+                        <td><input type="text" name="norm4" readonly></td>
+                        <td><input type="text" name="status4" readonly></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="buttons-container">
+                <button type="submit">Перевірити</button>
+                <button type="button">Download analyses</button>
+                <button type="button">Find a specialist</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Нижній блок -->
+<div class="footer-section">
+    <div class="contact-us">
+        <h3>CONTACT US</h3>
+        <p><strong>Email:</strong> medDecode@team.com</p>
+        <p><strong>Phone:</strong> +44 123 456 7890</p>
+        <p><strong>Social Media:</strong></p>
+    </div>
+    <div class="service">
+        <h3>SERVICE</h3>
+        <ul>
+            <li>About medDecode</li>
+            <li>Medical Reform</li>
+            <li>User Agreement</li>
+            <li>Personal Data Processing</li>
+            <li>Help and Feedback</li>
+        </ul>
+    </div>
+</div>
+
+<script>
+const norms = {
+  "Гемоглобін": {min: 115, max: 150, advice: "Якщо нижче 110 — зверніться до лікаря"},
+  "Глюкоза": {min: 3.5, max: 5.9, advice: "Рекомендується консультація ендокринолога"},
+  "Холестерин": {min: 3.0, max: 5.0, advice: "Порадьтеся з кардіологом"},
+  "Тиск": {min: 90, max: 140, advice: "Якщо підвищений — перевірте серце"},
+};
+
+document.getElementById('analyzerForm').addEventListener('submit', (e) => {
+  e.preventDefault();
+  for (let i = 0; i < 5; i++) {
+    const indicator = document.getElementsByName(`indicator${i}`)[0].value;
+    const value = parseFloat(document.getElementsByName(`value${i}`)[0].value);
+    const normObj = norms[indicator];
+    const normText = `${normObj.min} - ${normObj.max}`;
+    let statusText = "";
+    if (value < normObj.min) statusText = `нижче норми (${normObj.advice})`;
+    else if (value > normObj.max) statusText = `вище норми (${normObj.advice})`;
+    else statusText = "у нормі";
+
+    document.getElementsByName(`norm${i}`)[0].value = normText;
+    document.getElementsByName(`status${i}`)[0].value = statusText;
+  }
+});
+</script>
+
+</body>
+</html>
 
