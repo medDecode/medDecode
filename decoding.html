@@ -31,7 +31,7 @@
     }
 
     /* Основний блок */
-    .main-section {
+    main.main-section {
         display: flex;
         justify-content: center;
         align-items: flex-start;
@@ -93,7 +93,7 @@
     }
 
     /* Нижній блок */
-    .footer-section {
+    footer.footer-section {
         display: flex;
         justify-content: center;
         gap: 200px;
@@ -126,15 +126,17 @@
 <!-- Верхній блок -->
 <header class="top-rectangle">
     <span>medDecode</span>
-    <a href="index.html">HOME</a>
-    <a href="#">SERVISE</a>
-    <a href="#">CONTACTS</a>
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="#">SERVISE</a>
+        <a href="#">CONTACTS</a>
+    </nav>
     <span>User Icon</span>
     <span>Language Icon</span>
 </header>
 
 <!-- Основний блок -->
-<div class="main-section">
+<main class="main-section">
     <!-- Центр: Логотип + Doctor Image -->
     <div class="doctor-center">
         <div class="center-logo">medDecode</div>
@@ -142,7 +144,7 @@
     </div>
 
     <!-- Праворуч: Decoding of analyzes + таблиця + кнопки -->
-    <div class="table-container">
+    <section class="table-container">
         <h3>Decoding of analyzes</h3>
         <form id="analyzerForm">
             <table>
@@ -224,18 +226,18 @@
                 <a href="specialists.html" class="footer-btn">Find a specialist</a>
             </div>
         </form>
-    </div>
-</div>
+    </section>
+</main>
 
 <!-- Нижній блок -->
-<div class="footer-section">
-    <div class="contact-us">
+<footer class="footer-section">
+    <section class="contact-us">
         <h3>CONTACT US</h3>
         <p><strong>Email:</strong> medDecode@team.com</p>
         <p><strong>Phone:</strong> +44 123 456 7890</p>
         <p><strong>Social Media:</strong></p>
-    </div>
-    <div class="service">
+    </section>
+    <section class="service">
         <h3>SERVICE</h3>
         <ul>
             <li>About medDecode</li>
@@ -244,8 +246,8 @@
             <li>Personal Data Processing</li>
             <li>Help and Feedback</li>
         </ul>
-    </div>
-</div>
+    </section>
+</footer>
 
 <script>
 const norms = {
@@ -263,8 +265,8 @@ document.getElementById('analyzerForm').addEventListener('submit', (e) => {
     const normObj = norms[indicator];
     const normText = `${normObj.min} - ${normObj.max}`;
     let statusText = "";
-    if (value < normObj.min) statusText = `нижче норми (${normObj.advice})`;
-    else if (value > normObj.max) statusText = `вище норми (${normObj.advice})`;
+    if (value < normObj.min) statusText = "нижче норми";
+    else if (value > normObj.max) statusText = "вище норми";
     else statusText = "у нормі";
 
     document.getElementsByName(`norm${i}`)[0].value = normText;
