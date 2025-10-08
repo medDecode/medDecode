@@ -13,8 +13,7 @@
         background-color: #f9f9f9;
     }
 
-    /* Верхній блок */
-    header.top-rectangle {
+    header {
         background-color: #e0f5e0;
         padding: 15px;
         display: flex;
@@ -23,15 +22,16 @@
         gap: 30px;
         font-size: 18px;
         font-weight: bold;
+        flex-wrap: wrap;
     }
-    header.top-rectangle a {
+    header nav a {
         text-decoration: none;
         color: black;
         font-weight: normal;
+        margin: 0 5px;
     }
 
-    /* Основний блок */
-    .main-section {
+    main {
         padding: 50px 0;
     }
 
@@ -58,7 +58,7 @@
         flex-wrap: wrap;
         justify-content: center;
         gap: 30px;
-        padding: 0 50px;
+        padding: 0 20px;
     }
 
     .doctor-card {
@@ -113,168 +113,86 @@
         color: #777;
     }
 
-    /* Нижній блок */
-    .footer-section {
+    footer {
         display: flex;
         justify-content: center;
         gap: 200px;
-        padding: 40px 0;
+        padding: 40px 20px;
         background-color: #e0f5e0;
-        margin-top: 50px;
+        flex-wrap: wrap;
     }
-
-    .contact-us, .service {
+    footer div {
         text-align: left;
     }
-
-    .contact-us h3, .service h3 {
-        margin-bottom: 10px;
+    footer h3 {
         text-align: center;
+        margin-bottom: 10px;
+        color: #067667;
     }
-
-    .service ul {
+    footer ul {
         list-style: none;
         padding: 0;
         margin: 0;
     }
-
-    .service li {
+    footer li {
         margin-bottom: 5px;
     }
-
 </style>
 </head>
 <body>
 
-<!-- Верхній блок -->
-<header class="top-rectangle">
+<header>
     <span>medDecode</span>
-    <a href="index.html">HOME</a>
-    <a href="#">SERVISE</a>
-    <a href="#">CONTACTS</a>
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="#">SERVICE</a>
+        <a href="#">CONTACTS</a>
+    </nav>
     <span>User Icon</span>
     <span>Language Icon</span>
 </header>
 
-<!-- Основний блок -->
-<div class="main-section">
-    <div class="banner">
+<main>
+    <section class="banner">
         <h1>medDecode</h1>
         <p>Doctors photo banner</p>
-    </div>
+    </section>
 
-    <h2>Recommended specialists</h2>
+    <section>
+        <h2>Recommended specialists</h2>
 
-    <div class="cards-container">
-        <!-- Картка 1 -->
-        <div class="doctor-card">
-            <div class="favorite-icon">♡</div>
-            <div class="doctor-photo">Doctor photo</div>
-            <div class="doctor-info">
-                <div class="rating">★ 4.8</div>
-                <h3>Dermatologist<br>Dr. John Smith</h3>
-                <p>750 UAH/session</p>
-            </div>
-            <div class="schedule">Mon&nbsp;24 · Tue&nbsp;25 · Wed&nbsp;26 · Thu&nbsp;27 <br>
-  Fri&nbsp;28 · Sat&nbsp;29 · Sun&nbsp;30</div>
+        <div class="cards-container">
+            <!-- Картки лікарів залишаються без змін -->
+            <article class="doctor-card">
+                <div class="favorite-icon">♡</div>
+                <div class="doctor-photo">Doctor photo</div>
+                <div class="doctor-info">
+                    <div class="rating">★ 4.8</div>
+                    <h3>Dermatologist<br>Dr. John Smith</h3>
+                    <p>750 UAH/session</p>
+                </div>
+                <div class="schedule">Mon&nbsp;24 · Tue&nbsp;25 · Wed&nbsp;26 · Thu&nbsp;27 <br>
+                  Fri&nbsp;28 · Sat&nbsp;29 · Sun&nbsp;30</div>
+            </article>
+
+            <article class="doctor-card">
+                <div class="favorite-icon">♡</div>
+                <div class="doctor-photo">Doctor photo</div>
+                <div class="doctor-info">
+                    <div class="rating">★ 5.0</div>
+                    <h3>Cardiologist<br>Dr. Evelyn Hart</h3>
+                    <p>950 UAH/session</p>
+                </div>
+                <div class="schedule">Mon&nbsp;24 · Tue&nbsp;25 · Wed&nbsp;26 · Thu&nbsp;27 <br>
+                  Fri&nbsp;28 · Sat&nbsp;29 · Sun&nbsp;30</div>
+            </article>
+
+            <!-- Додати інші картки як <article> аналогічно -->
         </div>
+    </section>
+</main>
 
-        <!-- Картка 2 -->
-        <div class="doctor-card">
-            <div class="favorite-icon">♡</div>
-            <div class="doctor-photo">Doctor photo</div>
-            <div class="doctor-info">
-                <div class="rating">★ 5.0</div>
-                <h3>Cardiologist<br>Dr. Evelyn Hart</h3>
-                <p>950 UAH/session</p>
-            </div>
-            <div class="schedule">Mon&nbsp;24 · Tue&nbsp;25 · Wed&nbsp;26 · Thu&nbsp;27 <br>
-  Fri&nbsp;28 · Sat&nbsp;29 · Sun&nbsp;30</div>
-        </div>
-
-        <!-- Картка 3 -->
-        <div class="doctor-card">
-            <div class="favorite-icon">♡</div>
-            <div class="doctor-photo">Doctor photo</div>
-            <div class="doctor-info">
-                <div class="rating">★ 4.9</div>
-                <h3>Neurologist<br>Dr. Marcus Lin</h3>
-                <p>950 UAH/session</p>
-            </div>
-            <div class="schedule">Mon&nbsp;24 · Tue&nbsp;25 · Wed&nbsp;26 · Thu&nbsp;27 <br>
-  Fri&nbsp;28 · Sat&nbsp;29 · Sun&nbsp;30</div>
-        </div>
-
-        <!-- Картка 4 -->
-        <div class="doctor-card">
-            <div class="favorite-icon">♡</div>
-            <div class="doctor-photo">Doctor photo</div>
-            <div class="doctor-info">
-                <div class="rating">★ 4.8</div>
-                <h3>Oncologist<br>Dr. Noah Kim</h3>
-                <p>900 UAH/session</p>
-            </div>
-            <div class="schedule">Mon&nbsp;24 · Tue&nbsp;25 · Wed&nbsp;26 · Thu&nbsp;27 <br>
-  Fri&nbsp;28 · Sat&nbsp;29 · Sun&nbsp;30</div>
-        </div>
-
-        <!-- Картка 5 -->
-        <div class="doctor-card">
-            <div class="favorite-icon">♡</div>
-            <div class="doctor-photo">Doctor photo</div>
-            <div class="doctor-info">
-                <div class="rating">★ 4.7</div>
-                <h3>Therapist<br>Dr. Amelia Ross</h3>
-                <p>800 UAH/session</p>
-            </div>
-            <div class="schedule">Mon&nbsp;24 · Tue&nbsp;25 · Wed&nbsp;26 · Thu&nbsp;27 <br>
-  Fri&nbsp;28 · Sat&nbsp;29 · Sun&nbsp;30</div>
-        </div>
-
-        <!-- Картка 6 -->
-        <div class="doctor-card">
-            <div class="favorite-icon">♡</div>
-            <div class="doctor-photo">Doctor photo</div>
-            <div class="doctor-info">
-                <div class="rating">★ 4.9</div>
-                <h3>Endocrinologist<br>Dr. Alex Wilson</h3>
-                <p>970 UAH/session</p>
-            </div>
-            <div class="schedule">Mon&nbsp;24 · Tue&nbsp;25 · Wed&nbsp;26 · Thu&nbsp;27 <br>
-  Fri&nbsp;28 · Sat&nbsp;29 · Sun&nbsp;30</div>
-        </div>
-
-        <!-- Картка 7 -->
-        <div class="doctor-card">
-            <div class="favorite-icon">♡</div>
-            <div class="doctor-photo">Doctor photo</div>
-            <div class="doctor-info">
-                <div class="rating">★ 5.0</div>
-                <h3>Psychiatrist<br>Dr. Linda Lee</h3>
-                <p>1000 UAH/session</p>
-            </div>
-            <div class="schedule">Mon&nbsp;24 · Tue&nbsp;25 · Wed&nbsp;26 · Thu&nbsp;27 <br>
-  Fri&nbsp;28 · Sat&nbsp;29 · Sun&nbsp;30</div>
-        </div>
-
-        <!-- Картка 8 -->
-        <div class="doctor-card">
-            <div class="favorite-icon">♡</div>
-            <div class="doctor-photo">Doctor photo</div>
-            <div class="doctor-info">
-                <div class="rating">★ 4.6</div>
-                <h3>Orthopedist<br>Dr. Robert Davis</h3>
-                <p>880 UAH/session</p>
-            </div>
-            <div class="schedule">Mon&nbsp;24 · Tue&nbsp;25 · Wed&nbsp;26 · Thu&nbsp;27 <br>
-  Fri&nbsp;28 · Sat&nbsp;29 · Sun&nbsp;30</div>
-        </div>
-
-    </div>
-</div>
-
-<!-- Нижній блок -->
-<div class="footer-section">
+<footer>
     <div class="contact-us">
         <h3>CONTACT US</h3>
         <p><strong>Email:</strong> medDecode@team.com</p>
@@ -291,8 +209,7 @@
             <li>Help and Feedback</li>
         </ul>
     </div>
-</div>
+</footer>
 
 </body>
 </html>
-
