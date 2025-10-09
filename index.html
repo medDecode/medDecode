@@ -90,7 +90,7 @@ body { margin:0; padding:0; background-color:#fff; display:flex; flex-direction:
 <body>
 
 <!-- HERO BLOCK -->
-<section class="hero-block">
+<div class="hero-block">
     <header class="top-rectangle">
         <div class="top-left">
             <img src="images/colba.png" alt="Колба">
@@ -179,10 +179,11 @@ body { margin:0; padding:0; background-color:#fff; display:flex; flex-direction:
             </div>
         </div>
     </footer>
-</section>
+</div>
 
-<!-- PROFILE SECTION (SPRIWY) -->
+<!-- PROFILE SECTION -->
 <section class="profile-section" id="profile-page" style="display:none;">
+  <h2>User Profile</h2>
   <header style="display:flex; align-items:center; gap:20px; padding:20px; background:#F6F5F3; border-bottom:1px solid #ccc;">
     <img src="images/colba.png" alt="Logo" style="width:40px;">
     <nav style="display:flex; gap:15px;">
@@ -193,7 +194,7 @@ body { margin:0; padding:0; background-color:#fff; display:flex; flex-direction:
     </nav>
   </header>
 
-  <main style="display:flex; flex-wrap:wrap; padding:30px; gap:40px; max-width:1200px; margin:0 auto;">
+  <div class="profile-main" style="display:flex; flex-wrap:wrap; padding:30px; gap:40px; max-width:1200px; margin:0 auto;">
     <div style="flex:1; max-width:250px; text-align:center;">
       <div style="position:relative; display:inline-block;">
         <img src="images/profile-avatar.png" alt="User Avatar" style="width:120px; height:120px; border-radius:50%; object-fit:cover;">
@@ -236,10 +237,10 @@ body { margin:0; padding:0; background-color:#fff; display:flex; flex-direction:
         <p>Your analysis history will appear here...</p>
       </div>
     </div>
-  </main>
+  </div>
 
   <footer style="padding:20px; text-align:center;">
-    <button onclick="closeProfile()" style="padding:10px 20px; background:#067667; color:#fff; border:none; border-radius:5px; cursor:pointer;">← Back to Home</button>
+    <button onclick="closeProfile()" style="padding:10px 20px; background:#067667; color:#fff; border:none; border-radius:5px; cursor:pointer;">HOME</button>
   </footer>
 </section>
 
@@ -258,12 +259,8 @@ function closeProfile() {
 }
 
 function showTab(tabId) {
-  tabs.forEach(tab => tab.style.display='none');
-  document.getElementById(tabId).style.display='block';
-}
-
-function logout() {
-  alert("Logged out!");
+  tabs.forEach(tab => tab.style.display = 'none');
+  document.getElementById(tabId).style.display = 'block';
 }
 </script>
 
