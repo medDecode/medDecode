@@ -1,1 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>medDecode - Service</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        background-color: #f9f9f9;
+        scroll-behavior: smooth; /* плавна прокрутка */
+    }
+
+    /* Header */
+    header.top-rectangle {
+        background-color: #e0f5e0;
+        padding: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        font-size: 18px;
+        font-weight: bold;
+    }
+    header.top-rectangle a {
+        text-decoration: none;
+        color: black;
+        font-weight: normal;
+    }
+    header.top-rectangle a:hover {
+        text-decoration: underline;
+    }
+
+    /* Main Section */
+    main.main-section {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 80px;
+        padding: 50px 0;
+    }
+
+    .doctor-center {
+        text-align: center;
+    }
+    .doctor-center .center-logo {
+        font-size: 28px;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+    .doctor-center .doctor-image {
+        font-size: 18px;
+        color: #555;
+    }
+
+    .service-info {
+        max-width: 700px;
+        text-align: left;
+        background-color: #e8f7e8;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    h3 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .service-section {
+        margin-bottom: 35px;
+    }
+
+    .service-section h4 {
+        margin-bottom: 10px;
+        color: #2c8c4a;
+        font-size: 20px;
+    }
+
+    .service-section p {
+        margin: 8px 0;
+        font-size: 16px;
+        color: #333;
+        line-height: 1.6;
+    }
+
+    /* Footer */
+    footer.footer-section {
+        display: flex;
+        justify-content: center;
+        gap: 200px;
+        padding: 40px 0;
+        background-color: #e0f5e0;
+    }
+
+    .contact-us, .service {
+        text-align: left;
+    }
+
+    .contact-us h3, .service h3 {
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .service ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .service li {
+        margin-bottom: 5px;
+    }
+
+    .service a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .service a:hover {
+        text-decoration: underline;
+    }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="top-rectangle">
+    <span>medDecode</span>
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="specialists.html">SPECIALISTS</a>
+        <a href="contacts.html">CONTACTS</a>
+    </nav>
+    <span>User Icon</span>
+    <span>Language Icon</span>
+</header>
+
+<!-- Main Section -->
+<main class="main-section">
+    <div class="doctor-center">
+        <div class="center-logo">medDecode</div>
+        <div class="doctor-image">Your trusted online medical assistant</div>
+    </div>
+
+    <section class="service-info">
+        <h3>SERVICE INFORMATION</h3>
+
+        <div id="privacy-policy" class="service-section">
+            <h4>Privacy Policy</h4>
+            <p>medDecode is committed to protecting the privacy of every user. We collect only the information necessary to provide accurate interpretation of your medical test results. All uploaded data are stored securely and used exclusively to generate personalized reports.</p>
+            <p>Users have full control over their personal information and can request its deletion or correction at any time. No data are shared with third parties without explicit consent, except as required by law. Our system complies with international standards of personal data protection, including GDPR.</p>
+        </div>
+
+        <div id="data-security" class="service-section">
+            <h4>Data Security</h4>
+            <p>We take data security extremely seriously. All communications between your device and our servers are encrypted using SSL technology, ensuring that your data cannot be intercepted or tampered with.</p>
+            <p>medDecode stores information on protected servers located in secure data centers, with regular security audits and multi-level access control. Internal data handling procedures follow strict protocols to prevent unauthorized access, leaks, or data loss.</p>
+            <p>Additionally, backup copies of data are created automatically to ensure the stability and reliability of the service in the event of technical failure.</p>
+        </div>
+
+        <div id="cookies-policy" class="service-section">
+            <h4>Cookies Policy</h4>
+            <p>Our website uses cookies to improve functionality, analyze usage statistics, and personalize user experience. Cookies allow us to remember your preferences, such as selected language or display settings, for a smoother browsing experience.</p>
+            <p>We do not use cookies to collect sensitive personal data. You can modify your cookie preferences at any time through your browser settings. Disabling cookies may affect certain features of the website but will not restrict access to main functionalities.</p>
+        </div>
+
+        <div id="accessibility" class="service-section">
+            <h4>Accessibility Statement</h4>
+            <p>medDecode is designed to be accessible to all users, including people with disabilities. We strive to maintain compliance with WCAG (Web Content Accessibility Guidelines) standards and continuously improve our interface to ensure an inclusive experience.</p>
+            <p>Text readability, contrast, navigation structure, and alternative text for images are optimized to make the platform as user-friendly as possible. We welcome feedback from users to further enhance accessibility and usability across different devices and assistive technologies.</p>
+        </div>
+
+        <div id="service-limitations" class="service-section">
+            <h4>Service Limitations</h4>
+            <p>The information provided by medDecode is for educational and informational purposes only. Our system analyzes test results automatically and provides general health insights, but it cannot replace professional medical diagnosis or treatment.</p>
+            <p>Users are encouraged to consult certified medical specialists for an in-depth evaluation of their condition. medDecode assumes no responsibility for decisions made based solely on automated analysis results. The platform is intended to support, not substitute, the expertise of healthcare professionals.</p>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="footer-section">
+    <section class="contact-us">
+        <h3>CONTACT US</h3>
+        <p><strong>Email:</strong> medDecode@team.com</p>
+        <p><strong>Support:</strong> 24/7 online assistance</p>
+        <p><strong>Social Media:</strong> Instagram | Facebook | Telegram</p>
+    </section>
+
+    <section class="service">
+        <h3>SERVICE</h3>
+        <ul>
+            <li><a href="#privacy-policy">Privacy Policy</a></li>
+            <li><a href="#data-security">Data Security</a></li>
+            <li><a href="#cookies-policy">Cookies Policy</a></li>
+            <li><a href="#accessibility">Accessibility Statement</a></li>
+            <li><a href="#service-limitations">Service Limitations</a></li>
+        </ul>
+    </section>
+</footer>
+
+</body>
+</html>
 
