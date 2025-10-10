@@ -136,16 +136,17 @@
 </header>
 
 <!-- Основний блок -->
-<main class="main-section">
-    <!-- Центр: Логотип + Doctor Image -->
-    <div class="doctor-center">
+<main class="main-section" style="display: flex; flex-direction: column; align-items: center; gap: 50px; padding: 50px 0;">
+    <!-- Логотип + Doctor Image -->
+    <div class="doctor-center" style="text-align: center;">
         <h2 class="center-logo">medDecode</h2>
         <div class="doctor-image">
             <img src="images/doctor1.png" alt="Doctor" width="250">
     </div>
+</div>
 
-    <!-- Праворуч: Decoding of analyzes + таблиця + кнопки -->
-    <section class="table-container">
+    <!-- Decoding of analyzes + таблиця + кнопки -->
+    <section class="table-container" style="max-width: 600px; width: 100%;">
         <h3>Decoding of analyzes</h3>
         <p>Enter the analysis results into the table to get the status of the indicators.</p>
         <form id="analyzerForm">
@@ -159,7 +160,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- 5 рядків -->
+                    
                     <tr>
                         <td><select name="indicator0" required>
                             <option value="" disabled selected>Select an indicator</option>
