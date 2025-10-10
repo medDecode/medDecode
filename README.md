@@ -21,7 +21,8 @@ medDecode/
 |--- index.html # Головна сторінка                                               
 |--- decoding.html # Сторінка розшифрування аналізів                                      
 |--- specialists.html # Сторінка рекомендованих спеціалістів                                         
-|--- service.html # Сторінка сервісів                                                              
+|--- service.html # Сторінка сервісів                                                         
+|--- contacts.html # Сторінка контактів                                                          
 |                                                                                              
 |--- README.md # Опис проєкту                                                        
 
