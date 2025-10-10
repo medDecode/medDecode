@@ -140,7 +140,8 @@
     <!-- Центр: Логотип + Doctor Image -->
     <div class="doctor-center">
         <h2 class="center-logo">medDecode</h2>
-        <div class="doctor-image">Doctor Image</div>
+        <div class="doctor-image">
+            <img src="images/doctor1.png" alt="Doctor" width="250">
     </div>
 
     <!-- Праворуч: Decoding of analyzes + таблиця + кнопки -->
@@ -162,10 +163,10 @@
                     <tr>
                         <td><select name="indicator0" required>
                             <option value="" disabled selected>Select an indicator</option>
-                            <option value="Гемоглобін">Гемоглобін</option>
-                            <option value="Глюкоза">Глюкоза</option>
-                            <option value="Холестерин">Холестерин</option>
-                            <option value="Тиск">Тиск</option>
+                            <option value="Hemoglobin">Hemoglobin</option>
+                            <option value="Glucose">Glucose</option>
+                            <option value="Cholesterol">Cholesterol</option>
+                            <option value="Blood Pressure">Blood Pressure</option>
                         </select></td>
                         <td><input type="number" name="value0" step="0.1" required></td>
                         <td><input type="text" name="norm0" readonly></td>
@@ -174,10 +175,10 @@
                     <tr>
                         <td><select name="indicator1" required>
                             <option value="" disabled selected>Select an indicator</option>
-                            <option value="Гемоглобін">Гемоглобін</option>
-                            <option value="Глюкоза">Глюкоза</option>
-                            <option value="Холестерин">Холестерин</option>
-                            <option value="Тиск">Тиск</option>
+                            <option value="Hemoglobin">Hemoglobin</option>
+                            <option value="Glucose">Glucose</option>
+                            <option value="Cholesterol">Cholesterol</option>
+                            <option value="Blood Pressure">Blood Pressure</option>
                         </select></td>
                         <td><input type="number" name="value1" step="0.1" required></td>
                         <td><input type="text" name="norm1" readonly></td>
@@ -186,10 +187,10 @@
                     <tr>
                         <td><select name="indicator2" required>
                             <option value="" disabled selected>Select an indicator</option>
-                            <option value="Гемоглобін">Гемоглобін</option>
-                            <option value="Глюкоза">Глюкоза</option>
-                            <option value="Холестерин">Холестерин</option>
-                            <option value="Тиск">Тиск</option>
+                            <option value="Hemoglobin">Hemoglobin</option>
+                            <option value="Glucose">Glucose</option>
+                            <option value="Cholesterol">Cholesterol</option>
+                            <option value="Blood Pressure">Blood Pressure</option>
                         </select></td>
                         <td><input type="number" name="value2" step="0.1" required></td>
                         <td><input type="text" name="norm2" readonly></td>
@@ -198,10 +199,10 @@
                     <tr>
                         <td><select name="indicator3" required>
                             <option value="" disabled selected>Select an indicator</option>
-                            <option value="Гемоглобін">Гемоглобін</option>
-                            <option value="Глюкоза">Глюкоза</option>
-                            <option value="Холестерин">Холестерин</option>
-                            <option value="Тиск">Тиск</option>
+                            <option value="Hemoglobin">Hemoglobin</option>
+                            <option value="Glucose">Glucose</option>
+                            <option value="Cholesterol">Cholesterol</option>
+                            <option value="Blood Pressure">Blood Pressure</option>
                         </select></td>
                         <td><input type="number" name="value3" step="0.1" required></td>
                         <td><input type="text" name="norm3" readonly></td>
@@ -210,10 +211,10 @@
                     <tr>
                         <td><select name="indicator4" required>
                             <option value="" disabled selected>Select an indicator</option>
-                            <option value="Гемоглобін">Гемоглобін</option>
-                            <option value="Глюкоза">Глюкоза</option>
-                            <option value="Холестерин">Холестерин</option>
-                            <option value="Тиск">Тиск</option>
+                            <option value="Hemoglobin">Hemoglobin</option>
+                            <option value="Glucose">Glucose</option>
+                            <option value="Cholesterol">Cholesterol</option>
+                            <option value="Blood Pressure">Blood Pressure</option>
                         </select></td>
                         <td><input type="number" name="value4" step="0.1" required></td>
                         <td><input type="text" name="norm4" readonly></td>
@@ -222,7 +223,7 @@
                 </tbody>
             </table>
             <div class="buttons-container">
-                <button type="submit">Перевірити</button>
+                <button type="submit">Check</button>
                 <button type="button" id="downloadBtn">Download analyses</button>
                 <a href="specialists.html" class="footer-btn">Find a specialist</a>
             </div>
@@ -252,10 +253,10 @@
 
 <script>
 const norms = {
-  "Гемоглобін": {min: 115, max: 150},
-  "Глюкоза": {min: 3.5, max: 5.9},
-  "Холестерин": {min: 3.0, max: 5.0},
-  "Тиск": {min: 90, max: 140},
+  "Hemoglobin": {min: 115, max: 150},
+  "Glucose": {min: 3.5, max: 5.9},
+  "Cholesterol": {min: 3.0, max: 5.0},
+  "Blood Pressure": {min: 90, max: 140},
 };
 
 document.getElementById('analyzerForm').addEventListener('submit', (e) => {
@@ -266,9 +267,9 @@ document.getElementById('analyzerForm').addEventListener('submit', (e) => {
     const normObj = norms[indicator];
     const normText = `${normObj.min} - ${normObj.max}`;
     let statusText = "";
-    if (value < normObj.min) statusText = "нижче норми";
-    else if (value > normObj.max) statusText = "вище норми";
-    else statusText = "у нормі";
+    if (value < normObj.min) statusText = "below normal";
+    else if (value > normObj.max) statusText = "above normal";
+    else statusText = "within normal range";
 
     document.getElementsByName(`norm${i}`)[0].value = normText;
     document.getElementsByName(`status${i}`)[0].value = statusText;
@@ -276,7 +277,7 @@ document.getElementById('analyzerForm').addEventListener('submit', (e) => {
 });
 
 document.getElementById('downloadBtn').addEventListener('click', () => {
-  alert('Файл успішно завантажено');
+  alert('The file has been successfully downloaded');
 });
 </script>
 
