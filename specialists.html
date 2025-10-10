@@ -144,7 +144,9 @@ footer {
         <span>medDecode</span>
         <a href="index.html">HOME</a>
         <a href="specialists.html">SPECIALISTS</a>
+        <a href="decoding.html">DECODING</a>
         <a href="contacts.html">CONTACTS</a>
+        <a href="service.html">SERVICE</a>
         <span>User Icon</span>
         <span>Language Icon</span>
     </nav>
@@ -154,8 +156,7 @@ footer {
 <main>
     <section class="banner">
         <h1>medDecode</h1>
-        <p>Doctors photo banner</p>
-        <img src="images/banner-doctors.jpg" alt="Doctors Banner" width="100%">
+        <img src="images/doctors5.png" alt="Doctors Banner" style="width:40%;">
     </section>
 
     <section>
@@ -260,6 +261,31 @@ footer {
 
         </div>
     </section>
+
+<section>
+    <h2>Stay updated – subscribe now</h2>
+    <form id="subscribeForm" style="max-width: 400px; margin: auto; text-align: left;">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required style="width: 100%; padding: 8px; margin-bottom: 10px;"><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required style="width: 100%; padding: 8px; margin-bottom: 10px;"><br>
+
+        <button type="submit" style="background-color: #2c8c4a; color: white; padding: 10px 20px; border: none; border-radius: 5px;">Submit</button>
+    </form>
+    <p id="successMessage" style="color: green; text-align: center; display: none; margin-top: 10px;">
+        Thank you! You have successfully subscribed.
+    </p>
+</section>
+
+<script>
+document.getElementById('subscribeForm').addEventListener('submit', function(event){
+    event.preventDefault(); 
+    document.getElementById('successMessage').style.display = 'block';
+    this.reset();
+});
+</script>
+
 </main>
 
 <!-- Нижній блок -->
