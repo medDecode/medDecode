@@ -74,7 +74,7 @@ body {
     display: flex; 
     border-radius: 25px; 
     overflow: hidden; 
-    background: url('../images/Rectangle_greenr.png') no-repeat center/cover; 
+    background: url('../images/Rectangle_greenr.webp') no-repeat center/cover; 
     padding: 0px; 
     justify-content: space-between; 
     align-items: center; 
