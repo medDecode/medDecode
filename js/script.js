@@ -42,6 +42,7 @@ form.addEventListener('submit', (e) => {
     .catch(err => console.error(err));
 });
 
+// Аналіз результатів
 const norms = {
   "Hemoglobin": {min: 115, max: 150},
   "Glucose": {min: 3.5, max: 5.9},
@@ -49,24 +50,51 @@ const norms = {
   "Blood Pressure": {min: 90, max: 140},
 };
 
-document.getElementById('analyzerForm').addEventListener('submit', (e) => {
-  e.preventDefault();
-  for (let i = 0; i < 5; i++) {
-    const indicator = document.getElementsByName(`indicator${i}`)[0].value;
-    const value = parseFloat(document.getElementsByName(`value${i}`)[0].value);
-    const normObj = norms[indicator];
-    const normText = `${normObj.min} - ${normObj.max}`;
-    let statusText = "";
-    if (value < normObj.min) statusText = "below normal";
-    else if (value > normObj.max) statusText = "above normal";
-    else statusText = "within normal range";
+const analyzerForm = document.getElementById('analyzerForm');
+if(analyzerForm){
+  analyzerForm.addEventListener('submit', (e) => {
+    e.preventDefault();
 
-    document.getElementsByName(`norm${i}`)[0].value = normText;
-    document.getElementsByName(`status${i}`)[0].value = statusText;
-  }
-});
+    for (let i = 0; i < 5; i++) {
+      const indicatorElem = document.getElementsByName(`indicator${i}`)[0];
+      const valueElem = document.getElementsByName(`value${i}`)[0];
+      const normElem = document.getElementsByName(`norm${i}`)[0];
+      const statusElem = document.getElementsByName(`status${i}`)[0];
 
-document.getElementById('downloadBtn').addEventListener('click', () => {
-  alert('The file has been successfully downloaded');
-});
+      if(!indicatorElem || !valueElem || !normElem || !statusElem) continue;
+
+      const indicator = indicatorElem.value;
+      const value = parseFloat(valueElem.value);
+
+      if(!indicator || isNaN(value)){
+        normElem.value = '';
+        statusElem.value = '';
+        continue;
+      }
+
+      const normObj = norms[indicator];
+      if(!normObj) continue;
+
+      const normText = `${normObj.min} - ${normObj.max}`;
+      let statusText = "";
+
+      if (value < normObj.min) statusText = "below normal";
+      else if (value > normObj.max) statusText = "above normal";
+      else statusText = "within normal range";
+
+      normElem.value = normText;
+      statusElem.value = statusText;
+    }
+  });
+}
+
+// Кнопка завантаження
+const downloadBtn = document.getElementById('downloadBtn');
+if(downloadBtn){
+  downloadBtn.addEventListener('click', () => {
+    alert('The file has been successfully downloaded');
+    // Тут можна додати генерацію файлу, якщо потрібно
+  });
+}
+
 
