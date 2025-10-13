@@ -245,7 +245,25 @@ body { margin:0; padding:0; background-color:#fff; display:flex; flex-direction:
     <button onclick="closeProfile()" style="padding:10px 20px; background:#067667; color:#fff; border:none; border-radius:5px; cursor:pointer;">HOME</button>
 </footer>
 </section>
+<script>
+const tabs = document.querySelectorAll('.tab-content');
 
-<script src="script.js"></script>
+function showProfile() {
+  document.querySelector('.hero-block').style.display = 'none';
+  document.querySelector('.profile-section').style.display = 'block';
+  showTab('profile');
+}
+
+function closeProfile() {
+  document.querySelector('.profile-section').style.display = 'none';
+  document.querySelector('.hero-block').style.display = 'block';
+}
+
+function showTab(tabId) {
+  tabs.forEach(tab => tab.style.display = 'none');
+  document.getElementById(tabId).style.display = 'block';
+}
+</script>
+
 </body>
 </html>
