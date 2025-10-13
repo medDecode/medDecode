@@ -42,9 +42,6 @@ form.addEventListener('submit', (e) => {
     .catch(err => console.error(err));
 });
 
-
-
-
 const norms = {
   "Hemoglobin": {min: 115, max: 150},
   "Glucose": {min: 3.5, max: 5.9},
