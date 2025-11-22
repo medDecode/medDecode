@@ -1,0 +1,1763 @@
+/* grid-layout.css - CSS Grid макети та адаптивне компонування */
+
+/* === MAIN LAYOUT === */
+.app-layout {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+/* === HERO SECTIONS === */
+.hero-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1400px;
+    height: 540px;
+    margin: 20px 0;
+    border-radius: 25px;
+    overflow: hidden;
+    background: url('../images/Rectangle_greenr.png') no-repeat center/cover;
+}
+
+.hero-grid-contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1400px;
+    height: 540px;
+    margin: 20px 0;
+    border-radius: 25px;
+    overflow: hidden;
+    background: url('../images/contact.png') no-repeat center/cover;
+}
+
+.hero-left .registration-area {
+    background-color: var(--card-bg);
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 350px;
+    width: 100%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.hero-grid .doctor-image-container {
+    display: flex;
+    text-align: right;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 1;
+}
+
+.hero-grid .doctor-image {
+    max-width: 110%;
+    width: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* === SPECIALISTS HERO === */
+.specialists-hero {
+    overflow: visible;
+}
+
+.specialists-hero-grid {
+    align-items: flex-start;
+}
+
+.specialists-image img {
+    height: 1000px;
+    width: auto;
+}
+
+.specialists-hero .specialists-image img {
+    width: auto !important;
+    height: 500px !important;
+    max-width: none !important;
+    border-radius: 15px;
+    object-fit: cover;
+    margin-top: 40px;
+}
+
+/* === ABOUT SECTION === */
+.about-grid {
+    display: grid;
+    grid-template-columns: 450px 1fr;
+    gap: 2rem;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.about-image {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    border-radius: 40px;
+}
+
+/* === CONTENT GRIDS === */
+.specialists-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem 0;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.analysis-form-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+/* === STATS GRID === */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.stats-grid .stat-box {
+    padding: 2rem;
+    border-radius: 20px;
+    background-color: var(--card-bg);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.stats-grid .stat-box .value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--main-green);
+}
+
+.stats-grid .stat-box .label {
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    margin-top: 0.5rem;
+}
+
+/* === FOOTER GRID === */
+.footer-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+    background: url('../images/Rectangle_contact.png') no-repeat center;
+    background-size: cover;
+    border-radius: 10px;
+    padding: 80px 50px;
+    min-height: 400px;
+}
+
+/* === ADVANCED GRIDS === */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+.masonry-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-auto-rows: 10px;
+    gap: 1.5rem;
+}
+
+.masonry-item {
+    grid-row-end: span 20;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.image-item {
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+}
+
+.image-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.image-item:hover img {
+    transform: scale(1.05);
+}
+
+/* === DESKTOP BREAKPOINTS === */
+@media (min-width: 768px) {
+    .hero-grid {
+        grid-template-columns: 1fr 1fr;
+        padding-right: 0;
+        padding: 3rem 2rem;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .analysis-form-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 3rem;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .profile-grid {
+        grid-template-columns: 250px 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 300px 1fr;
+        grid-template-rows: auto 1fr;
+        grid-template-areas:
+            "sidebar header"
+            "sidebar main";
+        gap: 2rem;
+        padding: 2rem;
+    }
+
+    .dashboard-sidebar {
+        grid-area: sidebar;
+    }
+
+    .dashboard-header {
+        grid-area: header;
+    }
+
+    .dashboard-main {
+        grid-area: main;
+    }
+}
+
+/* === MOBILE ADAPTATION === */
+@media screen and (max-width: 768px) {
+    .header {
+        padding: 0.8rem 0;
+    }
+
+    .nav-container {
+        padding: 0 1rem;
+    }
+
+    .logo {
+        font-size: 1.3em;
+    }
+
+    .logo img {
+        width: 35px;
+    }
+
+    .desktop-nav {
+        display: none;
+    }
+
+    .mobile-nav-toggle {
+        display: block;
+    }
+
+    .hero-grid {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        width: calc(100% - 20px) !important;
+        max-width: 100% !important;
+        height: 250px !important;
+        margin: 10px auto !important;
+        border-radius: 15px !important;
+        overflow: hidden !important;
+        background: url('../images/Rectangle_greenr.png') no-repeat center/cover !important;
+        padding: 1rem !important;
+        flex-direction: row !important;
+        position: relative !important;
+    }
+
+    .center-logo {
+        position: absolute !important;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        text-align: center !important;
+        z-index: 2 !important;
+        width: auto !important;
+    }
+
+    .center-logo h1 {
+        font-size: 0.1rem !important;
+        margin-bottom: 0.1rem !important;
+        color: rgb(29, 92, 75) !important;
+    }
+
+    .center-logo p {
+        font-size: 0.1rem !important;
+        color: rgb(16, 51, 41) !important;
+    }
+
+    .registration-area {
+        max-width: 100px !important;
+        padding: 0.3rem !important;
+        margin: 0 !important;
+        margin-right: auto !important;
+        z-index: 3 !important;
+        position: relative !important;
+    }
+
+    .registration-area h2 {
+        font-size: 0.2rem !important;
+        margin-bottom: 0.3rem !important;
+        line-height: 1.1 !important;
+    }
+
+    .registration-area .form-group {
+        margin-bottom: 0.2rem !important;
+    }
+
+    .registration-area .form-control {
+        padding: 0.15rem 0.2rem !important;
+        font-size: 7px !important;
+        height: 20px !important;
+    }
+
+    .registration-area .btn-primary {
+        padding: 0.2rem !important;
+        font-size: 0.6rem !important;
+        margin-top: 0.1rem !important;
+    }
+
+    .doctor-image-container {
+        margin: 0 !important;
+        margin-left: auto !important;
+        margin-right: -20px !important;
+        z-index: 3 !important;
+        position: relative !important;
+    }
+
+    .doctor-image {
+        width: 100px !important;
+        height: auto !important;
+    }
+
+    .hero-left {
+        display: none !important;
+    }
+
+    .hero-block {
+        margin: 15px;
+        padding: 15px;
+        border-radius: 15px;
+    }
+
+    .about-section {
+        margin-top: 50px;
+        padding: 0 1rem;
+    }
+
+    .about-content {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .specialists {
+        margin-top: 50px;
+        padding: 0 1rem;
+    }
+
+    .specialist-cards {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .specialist-photo {
+        width: 250px;
+        height: 250px;
+    }
+
+    .specialists-hero {
+        overflow: visible;
+    }
+
+    .specialists-hero-grid {
+        align-items: center !important;
+        flex-direction: column !important;
+    }
+
+    .specialists-image img {
+        height: auto !important;
+        width: 100% !important;
+        max-width: 300px !important;
+    }
+
+    .specialists-hero .specialists-image img {
+        width: 100% !important;
+        height: 250px !important;
+        max-width: 100% !important;
+        border-radius: 15px;
+        object-fit: cover;
+        margin-top: 20px !important;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+        text-align: right !important;
+        padding: 0 1rem !important;
+    }
+
+    .about-text {
+        margin-top: -120px !important;
+        padding-top: 0 !important;
+    }
+
+    .about-text h2 {
+        font-size: 0.7rem !important;
+        margin-bottom: 0.1rem !important;
+        margin-top: 0 !important;
+    }
+
+    .about-text p {
+        font-size: 0.5rem !important;
+        margin-bottom: 0.1rem !important;
+        line-height: 1.2 !important;
+        width: 150px !important;
+        max-width: 100% !important;
+        word-wrap: break-word !important;
+        word-break: normal !important;
+        white-space: normal !important;
+        text-align: right !important;
+        margin-left: auto !important;
+        margin-right: 0 !important;
+    }
+
+    .about-image {
+        justify-content: flex-start !important;
+        margin-top: 0 !important;
+    }
+
+    .about-image img {
+        max-width: 100px !important;
+        border-radius: 25px !important;
+    }
+
+    .specialists-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+        padding: 1rem !important;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+        padding: 0 1rem !important;
+    }
+
+    .analysis-form-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+        padding: 0 1rem !important;
+    }
+
+    .profile-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+        padding: 0 1rem !important;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+        margin: 1.5rem 0 !important;
+        padding: 0 1rem !important;
+    }
+
+    .stats-grid .stat-box {
+        padding: 1.5rem !important;
+        text-align: center !important;
+    }
+
+    .stats-grid .stat-box .value {
+        font-size: 2rem !important;
+    }
+
+    .stats-grid .stat-box .label {
+        font-size: 1rem !important;
+    }
+
+    .footer-grid {
+        flex-direction: column !important;
+        gap: 2rem !important;
+        padding: 2rem 1.5rem !important;
+        min-height: auto !important;
+        text-align: center !important;
+        background-size: cover !important;
+        margin: 0 1rem !important;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+        padding: 1rem !important;
+    }
+
+    .masonry-grid {
+        grid-template-columns: 1fr !important;
+        grid-auto-rows: auto !important;
+        gap: 1rem !important;
+    }
+
+    .image-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.5rem !important;
+        margin: 1rem 0 !important;
+    }
+
+    .image-item {
+        aspect-ratio: 1 !important;
+    }
+
+    .specialists-hero .specialists-image img {
+        width: 100% !important;
+        height: 125px !important;
+        border-radius: 8px !important;
+        margin-top: 10px !important;
+    }
+
+    .about-grid {
+        gap: 0.75rem !important;
+    }
+
+    .about-image img {
+        max-width: 160px !important;
+        border-radius: 12px !important;
+    }
+
+    .specialists-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+        padding: 1rem 0 !important;
+    }
+
+    .services-grid {
+        gap: 1rem !important;
+        padding: 0 1rem !important;
+    }
+
+    .analysis-form-grid {
+        gap: 1rem !important;
+        padding: 0 1rem !important;
+    }
+
+    .profile-grid {
+        gap: 1.5rem !important;
+        padding: 0 1rem !important;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr !important;
+        gap: 0.75rem !important;
+        margin: 1.5rem 0 !important;
+        padding: 0 1rem !important;
+    }
+
+    .stats-grid .stat-box {
+        padding: 1.5rem !important;
+        border-radius: 15px !important;
+    }
+
+    .stats-grid .stat-box .value {
+        font-size: 2rem !important;
+    }
+
+    .stats-grid .stat-box .label {
+        font-size: 1rem !important;
+    }
+
+    .footer-grid {
+        flex-direction: column !important;
+        gap: 2rem !important;
+        padding: 2rem 1.5rem !important;
+        min-height: 300px !important;
+        text-align: center !important;
+    }
+
+    .dashboard-grid {
+        gap: 1rem !important;
+        padding: 1rem !important;
+    }
+
+    .masonry-grid {
+        grid-template-columns: 1fr !important;
+        grid-auto-rows: auto !important;
+        gap: 1rem !important;
+    }
+
+    .image-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.5rem !important;
+        margin: 1rem 0 !important;
+    }
+
+    .footer {
+        margin-top: 20px !important;
+        padding: 10px 10px 10px 10px !important;
+        font-size: 12px !important;
+    }
+
+    .footer-buttons {
+        flex-direction: column !important;
+        padding: 10px !important;
+        margin: 0 auto 20px auto !important;
+        border-radius: 8px !important;
+        gap: 8px !important;
+    }
+
+    .footer-content {
+        flex-direction: column !important;
+        gap: 15px !important;
+        padding: 15px 10px !important;
+        background-size: cover !important;
+        border-radius: 10px !important;
+        text-align: center !important;
+    }
+
+    .footer-logo {
+        padding: 10px !important;
+        margin-bottom: 10px !important;
+    }
+
+    .footer-logo img {
+        width: 30px !important;
+        margin-bottom: 5px !important;
+    }
+
+    .footer-logo .logo-text {
+        font-size: 0.8em !important;
+    }
+
+    .footer-contact,
+    .footer-service {
+        flex: none !important;
+        width: 100% !important;
+        padding: 10px !important;
+    }
+
+    .footer-contact h3,
+    .footer-service h3 {
+        font-size: 0.8em !important;
+        margin-bottom: 10px !important;
+    }
+
+    .footer-contact p,
+    .footer-contact a,
+    .footer-service a {
+        font-size: 0.7em !important;
+    }
+
+    .footer-contact p,
+    .footer-service li a {
+        font-size: 0.6em !important;
+    }
+
+    .social-icons {
+        font-size: 12px !important;
+        gap: 8px !important;
+        justify-content: center !important;
+    }
+
+    .social-icons i {
+        font-size: 10px !important;
+    }
+
+    .footer-service ul li {
+        margin-bottom: 4px !important;
+    }
+
+    .password-toggle {
+        position: relative;
+    }
+
+    .password-toggle .form-control {
+        padding-right: 2.5rem !important;
+    }
+
+    .toggle-password {
+        position: absolute !important;
+        right: 0.75rem !important;
+        top: 65% !important;
+        transform: translateY(-50%) !important;
+        background: none !important;
+        border: none !important;
+        color: var(--text-light) !important;
+        cursor: pointer !important;
+        padding: 0.2rem !important;
+        font-size: 0.9rem !important;
+        z-index: 2 !important;
+    }
+
+    .footer-grid {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        width: calc(100% - 20px) !important;
+        max-width: 100% !important;
+        height: 250px !important;
+        margin: 10px auto !important;
+        border-radius: 15px !important;
+        overflow: hidden !important;
+        background: url('../images/Rectangle_contact.png') no-repeat center/cover !important;
+        padding: 1rem !important;
+        flex-direction: row !important;
+        position: relative !important;
+        gap: 20px !important;
+        min-height: auto !important;
+    }
+
+    .footer-center {
+        position: absolute !important;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        text-align: center !important;
+        z-index: 2 !important;
+        width: auto !important;
+    }
+
+    .footer-center h3 {
+        font-size: 0.1rem !important;
+        margin-bottom: 0.1rem !important;
+        color: rgb(0, 0, 0) !important;
+    }
+
+    .footer-center p {
+        font-size: 0.1rem !important;
+        color: rgba(0, 0, 0, 0.8) !important;
+    }
+
+    .footer-contact {
+        max-width: 100px !important;
+        padding: 0.3rem !important;
+        margin: 0 !important;
+        margin-right: auto !important;
+        z-index: 3 !important;
+        position: relative !important;
+    }
+
+    .footer-contact h3 {
+        font-size: 0.2rem !important;
+        margin-bottom: 0.3rem !important;
+        line-height: 1.1 !important;
+        color: rgb(14, 24, 23) !important;
+    }
+
+    .footer-contact p {
+        font-size: 7px !important;
+        margin: 2px 0 !important;
+        color: rgb(14, 24, 23) !important;
+    }
+
+    .social-icons {
+        gap: 4px !important;
+    }
+
+    .social-icons i {
+        font-size: 8px !important;
+    }
+
+    .footer-service {
+        max-width: 80px !important;
+        padding: 0.3rem !important;
+        margin: 0 !important;
+        margin-left: auto !important;
+        z-index: 3 !important;
+        position: relative !important;
+    }
+
+    .footer-service h3 {
+        font-size: 0.2rem !important;
+        margin-bottom: 0.3rem !important;
+        line-height: 1.1 !important;
+        color: rgb(14, 24, 23) !important;
+    }
+
+    .footer-service ul {
+        padding: 0 !important;
+    }
+
+    .footer-service li {
+        margin-bottom: 2px !important;
+    }
+
+    .footer-service a {
+        font-size: 6px !important;
+        color: rgb(14, 24, 23) !important;
+    }
+
+    .footer-other {
+        display: none !important;
+    }
+
+    .hero.text-center {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        width: 100% !important;
+    }
+
+    .hero.text-center h1,
+    .hero.text-center .tagline,
+    .hero.text-center .hero-image {
+        text-align: center !important;
+        width: fit-content !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .service-text {
+        font-size: 1.5rem !important;
+        text-align: center !important;
+        margin: 0 auto !important;
+    }
+
+    .contacts-hero {
+        padding: 0.8rem 0.3rem !important;
+        margin: 0.5rem 0 !important;
+        background-size: 200px auto !important;
+        background-position: center right !important;
+        min-height: 150px !important;
+    }
+
+    .contacts-hero-grid {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        flex-direction: row !important;
+        height: 120px !important;
+        gap: 1rem !important;
+        max-width: 300px !important;
+        margin: 0 auto !important;
+    }
+
+    .contacts-content {
+        max-width: 100px !important;
+        padding: 0.3rem !important;
+        margin-right: auto !important;
+        z-index: 3 !important;
+    }
+
+    .contacts-content h1 {
+        font-size: 0.3rem !important;
+        margin-bottom: 0.5rem !important;
+        color: #106757 !important;
+        line-height: 1.1 !important;
+    }
+
+    .contacts-content p {
+        font-size: 0.2rem !important;
+        margin-bottom: 1rem !important;
+        color: #133a33 !important;
+        line-height: 1.2 !important;
+    }
+
+    .contacts-stats {
+        display: none !important;
+    }
+
+    .contact-sections {
+        margin: 1rem auto !important;
+        padding: 0 0.5rem !important;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+
+    .contact-info-card,
+    .feedback-form-card {
+        border-radius: 10px !important;
+        margin: 0.5rem !important;
+    }
+
+    .card-header {
+        padding: 0.8rem 1rem !important;
+    }
+
+    .card-header h3 {
+        font-size: 0.8rem !important;
+    }
+
+    .card-body {
+        padding: 1rem !important;
+    }
+
+    .contact-details {
+        gap: 0.8rem !important;
+    }
+
+    .contact-item {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 0.5rem !important;
+    }
+
+    .contact-icon {
+        width: 30px !important;
+        height: 30px !important;
+        align-self: center !important;
+    }
+
+    .contact-icon i {
+        font-size: 0.8rem !important;
+    }
+
+    .contact-text strong {
+        font-size: 0.7rem !important;
+        margin-bottom: 0.1rem !important;
+    }
+
+    .contact-text p {
+        font-size: 0.6rem !important;
+    }
+
+    .contact-text small {
+        font-size: 0.5rem !important;
+    }
+
+    .social-links {
+        gap: 0.3rem !important;
+    }
+
+    .social-link {
+        padding: 0.3rem !important;
+        font-size: 0.6rem !important;
+    }
+
+    .social-link i {
+        width: 15px !important;
+        font-size: 0.7rem !important;
+    }
+
+    .contact-note {
+        padding: 0.6rem !important;
+        margin-top: 0.8rem !important;
+    }
+
+    .contact-note i {
+        font-size: 0.8rem !important;
+    }
+
+    .contact-note p {
+        font-size: 0.6rem !important;
+    }
+
+    .feedback-form-card .form-group {
+        margin-bottom: 0.8rem !important;
+    }
+
+    .form-label {
+        font-size: 0.7rem !important;
+        margin-bottom: 0.3rem !important;
+    }
+
+    .form-control {
+        padding: 0.3rem !important;
+        font-size: 0.6rem !important;
+    }
+
+    textarea.form-control {
+        min-height: 60px !important;
+    }
+
+    .form-actions {
+        margin-top: 1rem !important;
+    }
+
+    .btn-large {
+        padding: 0.5rem 1rem !important;
+        font-size: 0.7rem !important;
+    }
+
+    .faq-section {
+        padding: 1.5rem 0.5rem !important;
+        margin: 1.5rem 0 !important;
+    }
+
+    .faq-section h2 {
+        font-size: 0.9rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+
+    .faq-section .subheading {
+        font-size: 0.7rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+
+    .faq-grid {
+        gap: 0.5rem !important;
+    }
+
+    .faq-card {
+        border-radius: 8px !important;
+    }
+
+    .faq-question {
+        padding: 0.8rem 1rem !important;
+    }
+
+    .faq-question h4 {
+        font-size: 0.7rem !important;
+    }
+
+    .faq-question i {
+        font-size: 0.8rem !important;
+    }
+
+    .faq-answer.active {
+        padding: 0 1rem 0.8rem 1rem !important;
+    }
+
+    .faq-answer p {
+        font-size: 0.6rem !important;
+    }
+
+    .support-channels {
+        margin: 1.5rem auto !important;
+    }
+
+    .support-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+
+    .support-card {
+        padding: 1rem !important;
+        border-radius: 10px !important;
+    }
+
+    .support-icon {
+        width: 50px !important;
+        height: 50px !important;
+        margin: 0 auto 1rem !important;
+    }
+
+    .support-icon i {
+        font-size: 1.2rem !important;
+    }
+
+    .support-card h4 {
+        font-size: 0.8rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+
+    .support-card p {
+        font-size: 0.6rem !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .contacts-hero {
+        background-size: 200px auto !important;
+        min-height: 150px !important;
+        padding: 1rem 0.5rem !important;
+    }
+
+    .contacts-hero-grid {
+        height: 120px !important;
+        max-width: 300px !important;
+    }
+
+    .contacts-content {
+        max-width: 120px !important;
+        padding: 0.5rem !important;
+    }
+
+    .contacts-content h1 {
+        font-size: 1.2rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+
+    .contacts-content p {
+        font-size: 0.9rem !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .contacts-stats {
+        display: none !important;
+    }
+
+    .hero-grid-contact {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        width: calc(100% - 20px) !important;
+        max-width: 100% !important;
+        height: 200px !important;
+        margin: 10px auto !important;
+        border-radius: 15px !important;
+        overflow: hidden !important;
+        background: url('../images/contact.png') no-repeat center/cover !important;
+        padding: 1rem !important;
+        flex-direction: row !important;
+        position: relative !important;
+    }
+
+    .contacts-content {
+        max-width: 120px !important;
+        padding: 0.5rem !important;
+        margin-right: auto !important;
+        z-index: 3 !important;
+    }
+
+    .contacts-content h1 {
+        font-size: 0.9rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+
+    .contacts-content p {
+        font-size: 0.9rem !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .contacts-image {
+        max-width: 80px !important;
+        padding: 0.5rem !important;
+        margin-left: auto !important;
+        z-index: 3 !important;
+    }
+
+    .contacts-image img {
+        width: 100% !important;
+        height: auto !important;
+        border-radius: 8px !important;
+    }
+
+    .profile-section {
+        flex-direction: column !important;
+        padding: 10px !important;
+        margin: 10px auto !important;
+        border-radius: 15px !important;
+    }
+
+    .profile-wrapper {
+        flex-direction: column !important;
+        gap: 15px !important;
+    }
+
+    .profile-sidebar {
+        flex-direction: row !important;
+        overflow-x: auto !important;
+        min-width: 100% !important;
+        gap: 8px !important;
+        padding: 5px !important;
+    }
+
+    .profile-sidebar button {
+        padding: 8px 12px !important;
+        font-size: 0.7rem !important;
+        white-space: nowrap !important;
+        text-align: center !important;
+        min-width: 80px !important;
+    }
+
+    .profile-content {
+        padding: 15px !important;
+        border-radius: 10px !important;
+    }
+
+    .panel#home {
+        padding: 10px !important;
+        gap: 15px !important;
+    }
+
+    .avatar-section {
+        flex-direction: column !important;
+        gap: 10px !important;
+    }
+
+    .avatar-circle {
+        width: 80px !important;
+        height: 80px !important;
+        border-width: 2px !important;
+    }
+
+    .avatar-buttons {
+        flex-direction: column !important;
+        gap: 8px !important;
+        width: 100% !important;
+    }
+
+    .avatar-buttons .btn {
+        padding: 6px 12px !important;
+        font-size: 0.7rem !important;
+        width: 100% !important;
+    }
+
+    .profile-info-form {
+        width: 100% !important;
+    }
+
+    .form-row {
+        flex-direction: column !important;
+        gap: 10px !important;
+        margin-bottom: 10px !important;
+    }
+
+    .form-field {
+        width: 100% !important;
+    }
+
+    .form-field label {
+        font-size: 0.8rem !important;
+        margin-bottom: 3px !important;
+    }
+
+    .form-field input {
+        padding: 6px 8px !important;
+        font-size: 0.7rem !important;
+    }
+
+    .gender-buttons {
+        flex-direction: column !important;
+        width: 100% !important;
+        gap: 8px !important;
+    }
+
+    .btn-gender {
+        width: 100% !important;
+        padding: 8px 12px !important;
+        font-size: 0.7rem !important;
+        text-align: center !important;
+    }
+
+    #saveBtn {
+        width: 100% !important;
+        margin: 10px 0 0 0 !important;
+        padding: 8px 16px !important;
+        font-size: 0.8rem !important;
+    }
+
+    .settings-menu {
+        position: relative !important;
+    }
+
+    .submenu {
+        position: absolute !important;
+        top: 100% !important;
+        left: 0 !important;
+        background: white !important;
+        border: 1px solid #ddd !important;
+        border-radius: 5px !important;
+        z-index: 10 !important;
+        min-width: 120px !important;
+        padding: 5px !important;
+    }
+
+    .submenu-btn {
+        padding: 6px 10px !important;
+        font-size: 0.7rem !important;
+        text-align: left !important;
+    }
+
+    .dashboard-title {
+        font-size: 1.2rem !important;
+        text-align: center !important;
+        margin-bottom: 15px !important;
+    }
+
+    .profile-section {
+        padding: 8px !important;
+        margin: 5px auto !important;
+    }
+
+    .profile-sidebar button {
+        padding: 6px 10px !important;
+        font-size: 0.6rem !important;
+        min-width: 70px !important;
+    }
+
+    .profile-content {
+        padding: 10px !important;
+    }
+
+    .avatar-circle {
+        width: 70px !important;
+        height: 70px !important;
+    }
+
+    .form-field input {
+        padding: 5px 6px !important;
+        font-size: 0.6rem !important;
+    }
+
+    .dashboard-title {
+        font-size: 1.0rem !important;
+    }
+
+    .profile-sidebar button {
+        padding: 5px 8px !important;
+        font-size: 0.5rem !important;
+        min-width: 60px !important;
+    }
+
+    .avatar-circle {
+        width: 60px !important;
+        height: 60px !important;
+    }
+
+    .form-field input {
+        padding: 4px 5px !important;
+        font-size: 0.5rem !important;
+    }
+
+    .dashboard-title {
+        font-size: 0.9rem !important;
+    }
+}
+
+/* === SMALL PHONES === */
+@media screen and (max-width: 480px) {
+    .hero-grid {
+        height: 220px !important;
+        margin: 8px auto !important;
+        padding: 0.8rem !important;
+    }
+
+    .center-logo h1 {
+        font-size: 1.0rem !important;
+    }
+
+    .center-logo p {
+        font-size: 0.4rem !important;
+    }
+
+    .registration-area {
+        max-width: 98px !important;
+        padding: 0.25rem !important;
+    }
+
+    .registration-area h2 {
+        font-size: 0.5rem !important;
+    }
+
+    .registration-area .form-control {
+        padding: 0.1rem 0.15rem !important;
+        font-size: 5px !important;
+        height: 18px !important;
+    }
+
+    .doctor-image {
+        width: 160px !important;
+    }
+
+    .toggle-password {
+        right: 0.1rem !important;
+        top: 60% !important;
+        font-size: 0.45rem !important;
+    }
+
+    .password-toggle .form-control {
+        padding-right: 2.2rem !important;
+    }
+
+    .stats-grid .stat-box {
+        padding: 1rem !important;
+    }
+
+    .stats-grid .stat-box .value {
+        font-size: 1.8rem !important;
+    }
+
+    .stats-grid .stat-box .label {
+        font-size: 0.9rem !important;
+    }
+
+    .footer-grid {
+        padding: 1.5rem 1rem !important;
+        min-height: 250px !important;
+    }
+
+    .image-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .footer {
+        margin-top: 15px !important;
+        padding: 8px 5px 5px 5px !important;
+    }
+
+    .footer-buttons {
+        padding: 8px !important;
+        margin: 0 auto 15px auto !important;
+    }
+
+    .footer-content {
+        padding: 10px 5px !important;
+        gap: 10px !important;
+    }
+
+    .footer-contact h3,
+    .footer-service h3 {
+        font-size: 0.7em !important;
+        margin-bottom: 8px !important;
+    }
+
+    .footer-contact p,
+    .footer-contact a,
+    .footer-service a {
+        font-size: 0.6em !important;
+    }
+
+    .footer-logo img {
+        width: 25px !important;
+    }
+
+    .footer-grid {
+        height: 220px !important;
+        margin: 8px auto !important;
+        padding: 0.8rem !important;
+        gap: 15px !important;
+    }
+
+    .footer-contact {
+        max-width: 90px !important;
+        padding: 0.2rem !important;
+    }
+
+    .footer-service {
+        max-width: 70px !important;
+        padding: 0.2rem !important;
+    }
+
+    .footer-contact p {
+        font-size: 6px !important;
+    }
+
+    .footer-service a {
+        font-size: 5px !important;
+    }
+
+    .social-icons i {
+        font-size: 7px !important;
+    }
+
+    .contacts-hero {
+        background-size: 180px auto !important;
+        min-height: 130px !important;
+        padding: 0.8rem 0.4rem !important;
+    }
+
+    .contacts-hero-grid {
+        height: 110px !important;
+        max-width: 280px !important;
+    }
+
+    .contacts-content {
+        max-width: 110px !important;
+        padding: 0.4rem !important;
+    }
+
+    .contacts-content h1 {
+        font-size: 1.0rem !important;
+    }
+
+    .contacts-content p {
+        font-size: 0.8rem !important;
+    }
+
+    .hero-grid-contact {
+        height: 180px !important;
+        margin: 8px auto !important;
+        padding: 0.8rem !important;
+    }
+
+    .contacts-content {
+        max-width: 110px !important;
+        padding: 0.4rem !important;
+    }
+
+    .contacts-content h1 {
+        font-size: 0.8rem !important;
+        text-align: left !important;
+        margin-left: -160px !important;
+        padding-left: 5px !important;
+    }
+
+    .contacts-content p {
+        font-size: 0.4rem !important;
+        text-align: left !important;
+        margin-left: -160px !important;
+        padding-left: 5px !important;
+        word-wrap: break-word !important;
+        width: 150px !important;
+    }
+
+    .contacts-image {
+        max-width: 70px !important;
+        padding: 0.4rem !important;
+    }
+}
+
+/* === EXTRA SMALL PHONES === */
+@media screen and (max-width: 360px) {
+    .hero-grid {
+        height: 200px !important;
+        margin: 6px auto !important;
+        padding: 0.6rem !important;
+    }
+
+    .center-logo h1 {
+        font-size: 1.1rem !important;
+    }
+
+    .registration-area {
+        max-width: 80px !important;
+        padding: 0.2rem !important;
+    }
+
+    .registration-area h2 {
+        font-size: 0.5rem !important;
+    }
+
+    .doctor-image {
+        width: 160px !important;
+    }
+
+    .toggle-password {
+        right: 0.1rem !important;
+        top: 75% !important;
+        font-size: 0.7rem !important;
+    }
+
+    .password-toggle .form-control {
+        padding-right: 2rem !important;
+    }
+
+    .specialist-card {
+        padding: 0.6rem !important;
+    }
+
+    .specialist-info {
+        padding: 0.6rem !important;
+    }
+
+    .form-group {
+        margin-bottom: 0.6rem !important;
+    }
+
+    .card-header,
+    .card-body,
+    .card-footer {
+        padding: 0.6rem !important;
+    }
+
+    .stats-grid .stat-box {
+        padding: 0.8rem !important;
+    }
+
+    .stats-grid .stat-box .value {
+        font-size: 1.6rem !important;
+    }
+
+    .stats-grid .stat-box .label {
+        font-size: 0.8rem !important;
+    }
+
+    .footer-contact h3,
+    .footer-service h3 {
+        font-size: 0.6em !important;
+    }
+
+    .footer-contact p,
+    .footer-contact a,
+    .footer-service a {
+        font-size: 0.5em !important;
+    }
+
+    .footer-logo .logo-text {
+        font-size: 0.7em !important;
+    }
+
+    .footer-grid {
+        height: 200px !important;
+        margin: 5px auto !important;
+        padding: 0.5rem !important;
+        gap: 10px !important;
+    }
+
+    .footer-contact {
+        max-width: 80px !important;
+        padding: 0.15rem !important;
+    }
+
+    .footer-service {
+        max-width: 60px !important;
+        padding: 0.15rem !important;
+    }
+
+    .footer-contact p {
+        font-size: 5px !important;
+    }
+
+    .footer-service a {
+        font-size: 4px !important;
+    }
+
+    .social-icons i {
+        font-size: 6px !important;
+    }
+
+    .specialists-hero .specialists-image img {
+        height: 90px !important;
+    }
+
+    .about-image img {
+        max-width: 110px !important;
+    }
+
+    .stats-grid .stat-box {
+        padding: 0.5rem !important;
+    }
+
+    .stats-grid .stat-box .value {
+        font-size: 0.8rem !important;
+    }
+
+    .contacts-hero {
+        background-size: 160px auto !important;
+        min-height: 120px !important;
+        padding: 0.6rem 0.3rem !important;
+    }
+
+    .contacts-hero-grid {
+        height: 100px !important;
+        max-width: 260px !important;
+    }
+
+    .contacts-content {
+        max-width: 100px !important;
+        padding: 0.3rem !important;
+    }
+
+    .contacts-content h1 {
+        font-size: 0.9rem !important;
+    }
+
+    .contacts-content p {
+        font-size: 0.7rem !important;
+    }
+
+    .hero-grid-contact {
+        height: 160px !important;
+        margin: 6px auto !important;
+        padding: 0.6rem !important;
+    }
+
+    .contacts-content {
+        max-width: 100px !important;
+        padding: 0.3rem !important;
+    }
+
+    .contacts-content h1 {
+        font-size: 0.9rem !important;
+    }
+
+    .contacts-content p {
+        font-size: 0.7rem !important;
+    }
+
+    .contacts-image {
+        max-width: 60px !important;
+        padding: 0.3rem !important;
+    }
+
+    .hero-grid-contact {
+        height: 150px !important;
+        margin: 5px auto !important;
+        padding: 0.5rem !important;
+    }
+
+    .contacts-content {
+        max-width: 80px !important;
+        padding: 0.15rem !important;
+    }
+
+    .contacts-content h1 {
+        font-size: 0.7rem !important;
+    }
+
+    .contacts-content p {
+        font-size: 0.5rem !important;
+    }
+
+    .contacts-image {
+        max-width: 60px !important;
+        padding: 0.15rem !important;
+    }
+
+    .profile-sidebar button {
+        padding: 5px 8px !important;
+        font-size: 0.5rem !important;
+        min-width: 60px !important;
+    }
+
+    .avatar-circle {
+        width: 60px !important;
+        height: 60px !important;
+    }
+
+    .form-field input {
+        padding: 4px 5px !important;
+        font-size: 0.5rem !important;
+    }
+
+    .dashboard-title {
+        font-size: 0.9rem !important;
+    }
+}
