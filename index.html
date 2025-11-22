@@ -1,173 +1,262 @@
 <!DOCTYPE html>
 <html lang="uk">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>medDecode - Реєстрація</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>medDecode - Реєстрація</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Odor+Mean+Chey&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Average+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
 
-<!-- HERO BLOCK -->
-<div class="hero-block">
-    <header class="top-rectangle">
-        <div class="top-left">
-            <img src="images/colba.png" alt="Колба">
-            <h1>medDecode</h1>
-        </div>
-        <nav class="top-nav">
-            <a href="index.html">HOME</a>
-            <a href="contacts.html">CONTACTS</a>
-            <a href="service.html">SERVICES</a>
-            <a href="decoding.html">DECODING</a>
-            <a href="specialists.html">SPECIALISTS</a>
-        </nav>
-        <div class="top-right">
-            <i class="fas fa-user-circle" title="My Profile" onclick="showProfile()"></i>
-            <i class="fas fa-globe"></i>
-        </div>
-    </header>
+<body class="app-layout">
+    <div class="hero-block">
+        <header class="header">
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="images/colba.png" alt="Колба">
+                    <span>medDecode</span>
+                </div>
 
-    <main>
-        <div class="visual-block">
-            <div class="registration-area">
-                <h2>Register and receive a transcript of your tests online</h2>
-                <form>
-                    <div class="input-group"><input type="text" placeholder="Name" required></div>
-                    <div class="input-group"><input type="text" placeholder="Last name" required></div>
-                    <div class="input-group"><input type="email" placeholder="Email" required></div>
-                    <div class="input-group">
-                        <input type="password" placeholder="Password" required>
-                        <span class="password-toggle"><i class="far fa-eye"></i></span>
-                    </div>
-                    <button type="submit" class="signup-button">Sign up</button>
-                </form>
+                <nav class="desktop-nav">
+                    <a href="index.html" class="active">HOME</a>
+                    <a href="decoding.html">DECODING</a>
+                    <a href="specialists.html">SPECIALISTS</a>
+                    <a href="service.html">SERVICES</a>
+                    <a href="contacts.html">CONTACTS</a>
+                </nav>
+
+                <button class="mobile-nav-toggle" aria-label="Відкрити меню">☰</button>
+
+                <div class="top-right">
+                    <i class="fas fa-user-circle" title="My Profile" onclick="showProfile()"></i>
+                    <i class="fas fa-globe"></i>
+                </div>
             </div>
-            <div class="center-logo">medDecode</div>
-            <img src="images/doctor0.png" alt="Doctor" class="doctor-image">
-        </div>
 
-        <!-- ABOUT & SPECIALISTS -->
-        <section class="about-section">
-            <div class="about-content">
-                <img src="images/laboratory.png" alt="laboratory">
-                <div class="about-text">
-                    <h2>About Our Server medDecode</h2>
-                    <p>MedDecode is an online service for downloading medical tests. The system automatically compares indicators with norms, highlights deviations and generates a clear report. Additionally, it suggests which specialist to contact.</p>
-                    <ul class="stats">
-                        <li class="stat-box"><div class="value">600+</div><div class="label">successfully analyzed results</div></li>
-                        <li class="stat-box"><div class="value">30+</div><div class="label">supported medical indicators</div></li>
-                        <li class="stat-box"><div class="value">60</div><div class="label">seconds – and you get a report</div></li>
+            <nav class="mobile-nav">
+                <a href="index.html" class="active">HOME</a>
+                <a href="decoding.html">DECODING</a>
+                <a href="specialists.html">SPECIALISTS</a>
+                <a href="service.html">SERVICES</a>
+                <a href="contacts.html">CONTACTS</a>
+            </nav>
+        </header>
+
+        <main>
+            <div class="hero-grid">
+                <div class="registration-area">
+                    <h2>Register and receive a transcript of your tests online</h2>
+                    <form novalidate>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Name" required>
+                            <div class="error-message">Будь ласка, введіть ваше ім'я</div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Last name" required>
+                            <div class="error-message">Будь ласка, введіть ваше прізвище</div>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Email" required>
+                            <div class="error-message">Будь ласка, введіть коректний email</div>
+                        </div>
+                        <div class="form-group password-toggle">
+                            <input type="password" class="form-control" placeholder="Password" required minlength="8">
+                            <button type="button" class="toggle-password">
+                                <i class="fas fa-eye-slash"></i>
+                            </button>
+                            <div class="error-message">Пароль повинен містити щонайменше 8 символів</div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Sign up</button>
+                    </form>
+                </div>
+                <div class="hero-left"></div>
+                <div class="center-logo text-center">
+                    <h1>medDecode</h1>
+                    <p>Your trusted medical assistant</p>
+                </div>
+
+                <div class="doctor-image-container">
+                    <img src="images/doctor0.png" alt="Doctor" class="doctor-image">
+                </div>
+            </div>
+
+            <section class="about-section container">
+                <div class="about-grid">
+                    <div class="about-image">
+                        <img src="images/laboratory.png" alt="laboratory" class="img-responsive">
+                    </div>
+                    <div class="about-text">
+                        <h2>About Our Server medDecode</h2>
+                        <p>MedDecode is an online service for downloading medical tests. The system automatically
+                            compares indicators with norms, highlights deviations and generates a clear report.
+                            Additionally, it suggests which specialist to contact.</p>
+
+                        <div class="stats-grid">
+                            <div class="stat-box card text-center">
+                                <div class="value">600+</div>
+                                <div class="label">successfully analyzed results</div>
+                            </div>
+                            <div class="stat-box card text-center">
+                                <div class="value">30+</div>
+                                <div class="label">supported medical indicators</div>
+                            </div>
+                            <div class="stat-box card text-center">
+                                <div class="value">60</div>
+                                <div class="label">seconds – and you get a report</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="specialists">
+                    <h2 class="text-center">Expert Specialists</h2>
+                    <div class="specialists-grid">
+                        <div class="specialist-card card">
+                            <img src="images/Emily.png" alt="Dr. Emily Wilson" class="specialist-photo">
+                            <h3>Dr. Emily Wilson</h3>
+                            <p class="role">Cardiologist</p>
+                            <p class="desc">Dr. Wilson focuses on heart health, providing expert care and personalized
+                                treatment.</p>
+                        </div>
+                        <div class="specialist-card card">
+                            <img src="images/John.png" alt="Dr. John Smith" class="specialist-photo">
+                            <h3>Dr. John Smith</h3>
+                            <p class="role">Dermatologist</p>
+                            <p class="desc">Dr. Smith treats skin conditions with expert care and attention.</p>
+                        </div>
+                        <div class="specialist-card card">
+                            <img src="images/Laura.png" alt="Dr. Laura Adams" class="specialist-photo">
+                            <h3>Dr. Laura Adams</h3>
+                            <p class="role">Pediatrician</p>
+                            <p class="desc">Dr. Adams provides compassionate care for children of all ages.</p>
+                        </div>
+                        <div class="specialist-card card">
+                            <img src="images/Michael.png" alt="Dr. Michael Lee" class="specialist-photo">
+                            <h3>Dr. Michael Lee</h3>
+                            <p class="role">Neurologist</p>
+                            <p class="desc">Dr. Lee specializes in brain and nerve disorders, offering precise diagnosis
+                                and treatment.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-buttons">
+                <a href="decoding.html" class="footer-btn btn">Download analyses</a>
+                <a href="specialists.html" class="footer-btn btn">Find a specialist</a>
+            </div>
+
+            <div class="footer-grid">
+                <div class="footer-logo text-center">
+                    <img src="images/colba.png" alt="Logo">
+                    <p class="logo-text">medDecode</p>
+                </div>
+
+                <div class="footer-contact">
+                    <h3>CONTACT US</h3>
+                    <p><strong>Email</strong><br>medDecode@team.com</p>
+                    <p><strong>Phone</strong><br>+44 123 456 7890</p>
+                    <p><strong>Social Media</strong></p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-telegram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-service">
+                    <h3>SERVICE</h3>
+                    <ul>
+                        <li><a href="service.html#privacy-policy">Privacy Policy</a></li>
+                        <li><a href="service.html#data-security">Data Security</a></li>
+                        <li><a href="service.html#cookies-policy">Cookies Policy</a></li>
+                        <li><a href="service.html#accessibility">Accessibility Statement</a></li>
+                        <li><a href="service.html#service-limitations">Service Limitations</a></li>
                     </ul>
                 </div>
             </div>
+        </footer>
+    </div>
 
-            <div class="specialists">
-                <h2>Expert Specialists</h2>
-                <div class="specialist-cards">
-                    <div class="card"><div class="photo"></div><h3>Dr. Emily Wilson</h3><p class="role">Cardiologist</p><p class="desc">Dr. Wilson focuses on heart health, providing expert care and personalized treatment.</p></div>
-                    <div class="card"><div class="photo"></div><h3>Dr. John Smith</h3><p class="role">Dermatologist</p><p class="desc">Dr. Smith treats skin conditions with expert care and attention.</p></div>
-                    <div class="card"><div class="photo"></div><h3>Dr. Laura Adams</h3><p class="role">Pediatrician</p><p class="desc">Dr. Adams provides compassionate care for children of all ages.</p></div>
-                    <div class="card"><div class="photo"></div><h3>Dr. Michael Lee</h3><p class="role">Neurologist</p><p class="desc">Dr. Lee specializes in brain and nerve disorders, offering precise diagnosis and treatment.</p></div>
+    <section class="profile-section" id="profile-page" style="display:none;">
+        <div class="profile-wrapper">
+            <div class="profile-sidebar">
+                <button class="menu-btn active" data-panel="home"
+                    onclick="window.location.href='index.html'">Home</button>
+                <button class="menu-btn" data-panel="history">Analysis history</button>
+                <button class="menu-btn" data-panel="notification">Notification</button>
+
+                <div class="settings-menu">
+                    <button class="menu-btn" id="settings-btn">Settings</button>
+                    <div class="submenu" id="settings-submenu">
+                        <button class="submenu-btn" onclick="openProfileSettings()">Profile Settings</button>
+                        <button class="submenu-btn" onclick="openPasswordSettings()">Password</button>
+                        <button class="submenu-btn" onclick="openOtherSettings()">Other</button>
+                    </div>
+                </div>
+
+                <button class="menu-btn logout-btn">Log out</button>
+            </div>
+
+            <div class="profile-content">
+                <div id="home" class="panel active">
+                    <h2 class="dashboard-title text-center">Welcome to your dashboard!</h2>
+
+                    <div class="avatar-section">
+                        <div class="avatar-circle">
+                            <img src="images/profile-avatar.png" alt="User Avatar" class="avatar">
+                        </div>
+                        <div class="avatar-buttons">
+                            <button type="button" class="btn btn-primary">Upload New</button>
+                            <button type="button" class="btn btn-danger">Delete Avatar</button>
+                        </div>
+                    </div>
+
+                    <form class="profile-info-form">
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label>First Name</label>
+                                <input type="text" placeholder="First Name" id="firstName">
+                            </div>
+                            <div class="form-field">
+                                <label>Last Name</label>
+                                <input type="text" placeholder="Last Name" id="lastName">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label>Email</label>
+                                <input type="email" placeholder="Email" id="email">
+                            </div>
+                            <div class="form-field">
+                                <label>Mobile Number</label>
+                                <input type="text" placeholder="Mobile Number" id="mobile">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <label>Gender</label>
+                            <div class="gender-buttons">
+                                <button type="button" class="btn-gender" id="maleBtn">Male</button>
+                                <button type="button" class="btn-gender" id="femaleBtn">Female</button>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-success" id="saveBtn">Save Changes</button>
+                    </form>
                 </div>
             </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="footer-buttons">
-            <a href="decoding.html" style="text-decoration: none;" class="footer-btn">Download analyses</a>
-            <a href="specialists.html" style="text-decoration: none;" class="footer-btn">Find a specialist</a>
         </div>
-        <div class="footer-content">
-            <div class="footer-logo"><img src="images/colba.png" alt="Logo"><p class="logo-text">medDecode</p></div>
-            <div class="footer-contact">
-                <h3>CONTACT US</h3>
-                <p><strong>Email</strong><br>medDecode@team.com</p>
-                <p><strong>Phone</strong><br>+44 123 456 7890</p>
-                <p><strong>Social Media</strong></p>
-                <div class="social-icons"><i class="fab fa-whatsapp"></i><i class="fab fa-telegram"></i><i class="fab fa-instagram"></i></div>
-            </div>
-            <div class="footer-service">
-                <h3>SERVICE</h3>
-                <ul>
-                    <li><a href="service.html#privacy-policy">Privacy Policy</a></li>
-                    <li><a href="service.html#data-security">Data Security</a></li>
-                    <li><a href="service.html#cookies-policy">Cookies Policy</a></li>
-                    <li><a href="service.html#accessibility">Accessibility Statement</a></li>
-                    <li><a href="service.html#service-limitations">Service Limitations</a></li>
-                </ul>
-            </div>
-        </div>
-    </footer>
-</div>
+    </section>
 
-<!-- PROFILE SECTION -->
-<section class="profile-section" id="profile-page" style="display:none;">
-  <h2>User Profile</h2>
-  <header style="display:flex; align-items:center; gap:20px; padding:20px; background:#F6F5F3; border-bottom:1px solid #ccc;">
-    <img src="images/colba.png" alt="Logo" style="width:40px;">
-    <nav style="display:flex; gap:15px;">
-      <button onclick="showTab('profile')" style="padding:8px 12px; cursor:pointer;">Profile Settings</button>
-      <button onclick="showTab('password')" style="padding:8px 12px; cursor:pointer;">Password</button>
-      <button onclick="showTab('history')" style="padding:8px 12px; cursor:pointer;">Analysis History</button>
-      <button onclick="logout()" style="padding:8px 12px; margin-left:20px; background:#d9534f; color:#fff; border:none; border-radius:5px; cursor:pointer;">Log Out</button>
-    </nav>
-  </header>
-
-  <div class="profile-main" style="display:flex; flex-wrap:wrap; padding:30px; gap:40px; max-width:1200px; margin:0 auto;">
-    <div style="flex:1; max-width:250px; text-align:center;">
-      <div style="position:relative; display:inline-block;">
-        <img src="images/profile-avatar.png" alt="User Avatar" style="width:120px; height:120px; border-radius:50%; object-fit:cover;">
-        <button style="position:absolute; bottom:0; right:0; background:#38b2ac; border:none; color:#fff; border-radius:50%; width:30px; height:30px; cursor:pointer;">✎</button>
-      </div>
-    </div>
-
-    <div style="flex:2; min-width:300px;">
-      <div id="profile" class="tab-content">
-        <div style="display:flex; gap:20px; flex-wrap:wrap; margin-bottom:15px;">
-          <div style="flex:1; min-width:120px;">
-            <label>Name</label><br>
-            <input type="text" placeholder="Your name" style="width:100%; padding:8px;">
-          </div>
-          <div style="flex:1; min-width:120px;">
-            <label>Last Name</label><br>
-            <input type="text" placeholder="Your last name" style="width:100%; padding:8px;">
-          </div>
-        </div>
-
-        <div style="display:flex; gap:20px; flex-wrap:wrap; margin-bottom:15px;">
-          <div style="flex:1; min-width:120px;">
-            <label>Gender</label><br>
-            <button style="padding:8px 12px; margin-right:5px; cursor:pointer;">Male</button>
-            <button style="padding:8px 12px; cursor:pointer;">Female</button>
-          </div>
-          <div style="flex:1; min-width:120px;">
-            <label>Email</label><br>
-            <input type="email" placeholder="Your email" style="width:100%; padding:8px;">
-          </div>
-        </div>
-        <button style="padding:10px 20px; background:#38b2ac; color:#fff; border:none; border-radius:5px; cursor:pointer;">Save Changes</button>
-      </div>
-
-      <div id="password" class="tab-content" style="display:none;">
-        <p>Change your password here...</p>
-      </div>
-
-      <div id="history" class="tab-content" style="display:none;">
-        <p>Your analysis history will appear here...</p>
-      </div>
-    </div>
-  </div>
-
-  <footer style="padding:20px; text-align:center;">
-    <button onclick="closeProfile()" style="padding:10px 20px; background:#067667; color:#fff; border:none; border-radius:5px; cursor:pointer;">HOME</button>
-</footer>
-</section>
-
-<script src="js/script.js"></script>
-
+    <script src="js/script.js"></script>
 </body>
+
 </html>
