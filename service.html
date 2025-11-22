@@ -1,257 +1,517 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>medDecode - Service</title>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        text-align: center;
-        background-color: #f9f9f9;
-        scroll-behavior: smooth;
-    }
-
-    /* Header */
-    header.top-rectangle {
-        background-color: #e0f5e0;
-        padding: 15px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 30px;
-        font-size: 18px;
-        font-weight: bold;
-    }
-    header.top-rectangle a {
-        text-decoration: none;
-        color: black;
-        font-weight: normal;
-    }
-    header.top-rectangle a:hover {
-        text-decoration: underline;
-    }
-
-    /* Main Section */
-    main.main-section {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 50px 20px;
-        gap: 40px;
-    }
-
-    .logo-section {
-        text-align: center;
-        margin-bottom: 20px;
-    }
-    .logo-section .center-logo {
-        font-size: 28px;
-        font-weight: bold;
-        margin-bottom: 10px;
-    }
-    .logo-section .tagline {
-        font-size: 18px;
-        color: #555;
-    }
-
-    .service-info {
-        max-width: 800px;
-        text-align: left;
-        background-color: #e8f7e8;
-        padding: 25px;
-        border-radius: 10px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-
-    h3 {
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    .service-section {
-        margin-bottom: 35px;
-    }
-
-    .service-section h4 {
-        margin-bottom: 10px;
-        color: #2c8c4a;
-        font-size: 20px;
-    }
-
-    .service-section p {
-        margin: 8px 0;
-        font-size: 16px;
-        color: #333;
-        line-height: 1.6;
-    }
-
-    /* Form */
-    .service-form {
-        margin-top: 30px;
-        background-color: #dff0d8;
-        padding: 20px;
-        border-radius: 8px;
-    }
-    .service-form input, .service-form textarea {
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 12px;
-        border-radius: 5px;
-        border: 1px solid #ccc;
-        box-sizing: border-box;
-    }
-    .service-form button {
-        background-color: #2c8c4a;
-        color: white;
-        border: none;
-        padding: 10px 18px;
-        border-radius: 5px;
-        cursor: pointer;
-        font-weight: bold;
-    }
-    .service-form button:hover {
-        background-color: #256d3b;
-    }
-
-    /* Footer */
-    footer.footer-section {
-        display: flex;
-        justify-content: center;
-        gap: 200px;
-        padding: 40px 20px;
-        background-color: #e0f5e0;
-        flex-wrap: wrap;
-    }
-
-    .contact-us, .service {
-        text-align: left;
-        max-width: 350px;
-    }
-
-    .contact-us h3, .service h3 {
-        margin-bottom: 10px;
-        text-align: center;
-    }
-
-    .service ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    .service li {
-        margin-bottom: 5px;
-    }
-
-    .service a {
-        text-decoration: none;
-        color: black;
-    }
-
-    .service a:hover {
-        text-decoration: underline;
-    }
-</style>
+    <!-- Мета-теги та підключення ресурсів -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>medDecode - Сервіс</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Odor+Mean+Chey&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Average+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
 
-<!-- Header -->
-<header class="top-rectangle">
-    <span>medDecode</span>
-    <nav>
-        <a href="index.html">HOME</a>
-        <a href="specialists.html">SPECIALISTS</a>
-        <a href="contacts.html">CONTACTS</a>
-        <a href="service.html">SERVICE</a>
-    </nav>
-    <span>User Icon</span>
-    <span>Language Icon</span>
-</header>
+<body class="app-layout">
+    <!-- Головний контейнер сторінки -->
+    <div class="hero-block">
+        <!-- Навігаційна панель -->
+        <header class="header">
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="images/colba.png" alt="Колба">
+                    <span>medDecode</span>
+                </div>
 
-<!-- Main Section -->
-<main class="main-section">
-    <div class="logo-section">
-        <div class="center-logo">medDecode</div>
-        <div class="tagline">Your trusted online medical assistant</div>
+                <!-- Основна навігація -->
+                <nav class="desktop-nav">
+                    <a href="index.html">HOME</a>
+                    <a href="decoding.html">DECODING</a>
+                    <a href="specialists.html">SPECIALISTS</a>
+                    <a href="service.html" class="active">SERVICES</a>
+                    <a href="contacts.html">CONTACTS</a>
+                </nav>
+
+                <!-- Кнопка мобільного меню -->
+                <button class="mobile-nav-toggle" aria-label="Відкрити меню">☰</button>
+
+                <div class="top-right">
+                    <i class="fas fa-globe"></i>
+                </div>
+            </div>
+
+            <!-- Мобільна навігація -->
+            <nav class="mobile-nav">
+                <a href="index.html">HOME</a>
+                <a href="decoding.html">DECODING</a>
+                <a href="specialists.html">SPECIALISTS</a>
+                <a href="service.html" class="active">SERVICE</a>
+                <a href="contacts.html">CONTACTS</a>
+            </nav>
+        </header>
+
+        <!-- Основний контент сторінки -->
+        <main class="container">
+            <!-- Герой-секція -->
+            <div class="hero-grid service">
+                <div class="hero text-center">
+                    <h1>medDecode</h1>
+                    <p class="tagline">Your trusted online medical assistant</p>
+                    <div class="hero-image">
+                        <span class="service-text">SERVICE</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Секція інформації про сервіс -->
+        <section class="service-info">
+            <!-- Навігація по розділам -->
+            <div class="service-navigation card">
+                <h3 class="text-center">Quick Navigation</h3>
+                <nav class="service-nav-links">
+                    <a href="#privacy-policy" class="service-nav-link">Privacy Policy</a>
+                    <a href="#data-security" class="service-nav-link">Data Security</a>
+                    <a href="#cookies-policy" class="service-nav-link">Cookies Policy</a>
+                    <a href="#accessibility" class="service-nav-link">Accessibility</a>
+                    <a href="#service-limitations" class="service-nav-link">Service Limitations</a>
+                </nav>
+            </div>
+
+            <!-- Основний контент сервісу -->
+            <div class="service-content">
+                <!-- Політика конфіденційності -->
+                <div id="privacy-policy" class="service-section card">
+                    <div class="service-header">
+                        <h4>Privacy Policy</h4>
+                        <div class="last-updated">Last updated: December 2024</div>
+                    </div>
+                    <div class="service-body">
+                        <p>medDecode is committed to protecting the privacy of every user. We collect only the
+                            information necessary to provide accurate interpretation of your medical test results.
+                            All uploaded data are stored securely and used exclusively to generate personalized
+                            reports.</p>
+
+                        <h5>Information We Collect</h5>
+                        <ul>
+                            <li>Personal identification information (Name, email address, phone number)</li>
+                            <li>Medical test results and health indicators</li>
+                            <li>Usage data and analytics</li>
+                            <li>Communication preferences</li>
+                        </ul>
+
+                        <h5>How We Use Your Information</h5>
+                        <p>Users have full control over their personal information and can request its deletion or
+                            correction at any time. No data are shared with third parties without explicit consent,
+                            except as required by law. Our system complies with international standards of personal
+                            data protection, including GDPR.</p>
+
+                        <div class="info-box">
+                            <i class="fas fa-shield-alt"></i>
+                            <p><strong>Your Rights:</strong> You have the right to access, correct, or delete your
+                                personal data at any time through your account settings or by contacting our support
+                                team.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Захист даних -->
+                <div id="data-security" class="service-section card">
+                    <div class="service-header">
+                        <h4>Data Security</h4>
+                        <div class="last-updated">Last updated: December 2024</div>
+                    </div>
+                    <div class="service-body">
+                        <p>We take data security extremely seriously. All communications between your device and our
+                            servers are encrypted using SSL technology, ensuring that your data cannot be
+                            intercepted or tampered with.</p>
+
+                        <h5>Security Measures</h5>
+                        <div class="security-features">
+                            <div class="security-feature">
+                                <i class="fas fa-lock"></i>
+                                <span>End-to-End Encryption</span>
+                            </div>
+                            <div class="security-feature">
+                                <i class="fas fa-server"></i>
+                                <span>Secure Data Centers</span>
+                            </div>
+                            <div class="security-feature">
+                                <i class="fas fa-user-shield"></i>
+                                <span>Multi-Factor Authentication</span>
+                            </div>
+                            <div class="security-feature">
+                                <i class="fas fa-history"></i>
+                                <span>Regular Backups</span>
+                            </div>
+                        </div>
+
+                        <p>medDecode stores information on protected servers located in secure data centers, with
+                            regular security audits and multi-level access control. Internal data handling
+                            procedures follow strict protocols to prevent unauthorized access, leaks, or data loss.
+                        </p>
+
+                        <p>Additionally, backup copies of data are created automatically to ensure the stability and
+                            reliability of the service in the event of technical failure.</p>
+                    </div>
+                </div>
+
+                <!-- Політика cookies -->
+                <div id="cookies-policy" class="service-section card">
+                    <div class="service-header">
+                        <h4>Cookies Policy</h4>
+                        <div class="last-updated">Last updated: December 2024</div>
+                    </div>
+                    <div class="service-body">
+                        <p>Our website uses cookies to improve functionality, analyze usage statistics, and
+                            personalize user experience. Cookies allow us to remember your preferences, such as
+                            selected language or display settings, for a smoother browsing experience.</p>
+
+                        <h5>Types of Cookies We Use</h5>
+                        <table class="cookies-table">
+                            <thead>
+                                <tr>
+                                    <th>Cookie Type</th>
+                                    <th>Purpose</th>
+                                    <th>Duration</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Essential Cookies</td>
+                                    <td>Basic website functionality</td>
+                                    <td>Session</td>
+                                </tr>
+                                <tr>
+                                    <td>Preference Cookies</td>
+                                    <td>Remember your settings</td>
+                                    <td>1 Year</td>
+                                </tr>
+                                <tr>
+                                    <td>Analytics Cookies</td>
+                                    <td>Website improvement</td>
+                                    <td>2 Years</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <p>We do not use cookies to collect sensitive personal data. You can modify your cookie
+                            preferences at any time through your browser settings. Disabling cookies may affect
+                            certain features of the website but will not restrict access to main functionalities.
+                        </p>
+
+                        <div class="cookie-controls">
+                            <button class="btn btn-primary" id="acceptCookies">Accept All Cookies</button>
+                            <button class="btn btn-secondary" id="rejectCookies">Reject Non-Essential</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Доступність -->
+                <div id="accessibility" class="service-section card">
+                    <div class="service-header">
+                        <h4>Accessibility Statement</h4>
+                        <div class="last-updated">Last updated: December 2024</div>
+                    </div>
+                    <div class="service-body">
+                        <p>medDecode is designed to be accessible to all users, including people with disabilities.
+                            We strive to maintain compliance with WCAG (Web Content Accessibility Guidelines)
+                            standards and continuously improve our interface to ensure an inclusive experience.</p>
+
+                        <h5>Accessibility Features</h5>
+                        <ul>
+                            <li>Keyboard navigation support</li>
+                            <li>Screen reader compatibility</li>
+                            <li>High contrast mode</li>
+                            <li>Text resizing capabilities</li>
+                            <li>Alternative text for images</li>
+                            <li>Clear and consistent layout</li>
+                        </ul>
+
+                        <p>Text readability, contrast, navigation structure, and alternative text for images are
+                            optimized to make the platform as user-friendly as possible. We welcome feedback from
+                            users to further enhance accessibility and usability across different devices and
+                            assistive technologies.</p>
+
+                        <div class="feedback-request">
+                            <p><strong>Need assistance?</strong> If you encounter any accessibility barriers, please
+                                contact our support team.</p>
+                            <button class="btn btn-secondary">Report Accessibility Issue</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Обмеження сервісу -->
+                <div id="service-limitations" class="service-section card">
+                    <div class="service-header">
+                        <h4>Service Limitations</h4>
+                        <div class="last-updated">Last updated: December 2024</div>
+                    </div>
+                    <div class="service-body">
+                        <div class="warning-box">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <p><strong>Important Notice:</strong> The information provided by medDecode is for
+                                educational and informational purposes only.</p>
+                        </div>
+
+                        <p>Our system analyzes test results automatically and provides general health insights, but
+                            it cannot replace professional medical diagnosis or treatment.</p>
+
+                        <h5>What Our Service Provides</h5>
+                        <ul>
+                            <li>Automated analysis of medical test results</li>
+                            <li>Comparison with standard reference ranges</li>
+                            <li>Educational information about health indicators</li>
+                            <li>Recommendations for specialist consultations</li>
+                        </ul>
+
+                        <h5>What Our Service Does Not Provide</h5>
+                        <ul>
+                            <li>Medical diagnosis or treatment plans</li>
+                            <li>Emergency medical advice</li>
+                            <li>Prescription recommendations</li>
+                            <li>Replacement for doctor's consultation</li>
+                        </ul>
+
+                        <p>Users are encouraged to consult certified medical specialists for an in-depth evaluation
+                            of their condition. medDecode assumes no responsibility for decisions made based solely
+                            on automated analysis results. The platform is intended to support, not substitute, the
+                            expertise of healthcare professionals.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Форма зворотного зв'язку -->
+            <div class="service-contact card">
+                <h4 class="text-center">Contact Us About Our Services</h4>
+                <form id="serviceForm" novalidate>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="name" placeholder="Your Name" required>
+                            <div class="error-message">Будь ласка, введіть ваше ім'я</div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+                            <div class="error-message">Будь ласка, введіть коректний email</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <select class="form-control" name="subject" required>
+                            <option value="" disabled selected>Select Subject</option>
+                            <option value="privacy">Privacy Policy</option>
+                            <option value="security">Data Security</option>
+                            <option value="cookies">Cookies</option>
+                            <option value="accessibility">Accessibility</option>
+                            <option value="limitations">Service Limitations</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <div class="error-message">Будь ласка, оберіть тему</div>
+                    </div>
+
+                    <div class="form-group">
+                        <textarea class="form-control" name="message" rows="4" placeholder="Your question or request..."
+                            required></textarea>
+                        <div class="error-message">Будь ласка, введіть ваше повідомлення</div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
+                            <label for="agreeTerms">I agree to the processing of my personal data according to your
+                                Privacy Policy</label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+                </form>
+
+                <!-- Альтернативні методи зв'язку -->
+                <div class="contact-alternatives">
+                    <p><strong>Prefer other methods?</strong></p>
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <span>Email: support@meddecode.com</span>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fas fa-phone"></i>
+                            <span>Phone: +44 123 456 7890</span>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fas fa-clock"></i>
+                            <span>Support Hours: 24/7</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Футер сторінки -->
+        <footer class="footer">
+            <div class="footer-grid">
+                <div class="footer-logo text-center">
+                    <img src="images/colba.png" alt="Logo">
+                    <p class="logo-text">medDecode</p>
+                </div>
+
+                <div class="footer-contact">
+                    <h3>CONTACT US</h3>
+                    <p><strong>Email:</strong> medDecode@team.com</p>
+                    <p><strong>Support:</strong> 24/7 online assistance</p>
+                    <p><strong>Social Media:</strong></p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-service">
+                    <h3>SERVICE</h3>
+                    <ul>
+                        <li><a href="service.html#privacy-policy">Privacy Policy</a></li>
+                        <li><a href="service.html#data-security">Data Security</a></li>
+                        <li><a href="service.html#cookies-policy">Cookies Policy</a></li>
+                        <li><a href="service.html#accessibility">Accessibility Statement</a></li>
+                        <li><a href="service.html#service-limitations">Service Limitations</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
     </div>
 
-    <section class="service-info">
-        <h3>SERVICE INFORMATION</h3>
+    <!-- JavaScript функціонал -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Обробка форми зворотного зв'язку
+            const serviceForm = document.getElementById('serviceForm');
+            if (serviceForm) {
+                serviceForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
 
-        <div id="privacy-policy" class="service-section">
-            <h4>Privacy Policy</h4>
-            <p>medDecode is committed to protecting the privacy of every user. We collect only the information necessary to provide accurate interpretation of your medical test results. All uploaded data are stored securely and used exclusively to generate personalized reports.</p>
-            <p>Users have full control over their personal information and can request its deletion or correction at any time. No data are shared with third parties without explicit consent, except as required by law. Our system complies with international standards of personal data protection, including GDPR.</p>
-        </div>
+                    const name = serviceForm.elements['name'].value.trim();
+                    const email = serviceForm.elements['email'].value.trim();
+                    const subject = serviceForm.elements['subject'].value;
+                    const message = serviceForm.elements['message'].value.trim();
+                    const agreeTerms = serviceForm.elements['agreeTerms'].checked;
 
-        <div id="data-security" class="service-section">
-            <h4>Data Security</h4>
-            <p>We take data security extremely seriously. All communications between your device and our servers are encrypted using SSL technology, ensuring that your data cannot be intercepted or tampered with.</p>
-            <p>medDecode stores information on protected servers located in secure data centers, with regular security audits and multi-level access control. Internal data handling procedures follow strict protocols to prevent unauthorized access, leaks, or data loss.</p>
-            <p>Additionally, backup copies of data are created automatically to ensure the stability and reliability of the service in the event of technical failure.</p>
-        </div>
+                    if (name && email && subject && message && agreeTerms) {
+                        const alert = document.createElement('div');
+                        alert.className = 'alert alert-success';
+                        alert.textContent = 'Thank you for your message! We will get back to you regarding our services shortly.';
+                        serviceForm.parentNode.insertBefore(alert, serviceForm);
 
-        <div id="cookies-policy" class="service-section">
-            <h4>Cookies Policy</h4>
-            <p>Our website uses cookies to improve functionality, analyze usage statistics, and personalize user experience. Cookies allow us to remember your preferences, such as selected language or display settings, for a smoother browsing experience.</p>
-            <p>We do not use cookies to collect sensitive personal data. You can modify your cookie preferences at any time through your browser settings. Disabling cookies may affect certain features of the website but will not restrict access to main functionalities.</p>
-        </div>
+                        serviceForm.reset();
 
-        <div id="accessibility" class="service-section">
-            <h4>Accessibility Statement</h4>
-            <p>medDecode is designed to be accessible to all users, including people with disabilities. We strive to maintain compliance with WCAG (Web Content Accessibility Guidelines) standards and continuously improve our interface to ensure an inclusive experience.</p>
-            <p>Text readability, contrast, navigation structure, and alternative text for images are optimized to make the platform as user-friendly as possible. We welcome feedback from users to further enhance accessibility and usability across different devices and assistive technologies.</p>
-        </div>
+                        setTimeout(() => {
+                            alert.remove();
+                        }, 5000);
+                    }
+                });
+            }
 
-        <div id="service-limitations" class="service-section">
-            <h4>Service Limitations</h4>
-            <p>The information provided by medDecode is for educational and informational purposes only. Our system analyzes test results automatically and provides general health insights, but it cannot replace professional medical diagnosis or treatment.</p>
-            <p>Users are encouraged to consult certified medical specialists for an in-depth evaluation of their condition. medDecode assumes no responsibility for decisions made based solely on automated analysis results. The platform is intended to support, not substitute, the expertise of healthcare professionals.</p>
-        </div>
+            // Управління cookies
+            const acceptCookies = document.getElementById('acceptCookies');
+            const rejectCookies = document.getElementById('rejectCookies');
 
-        <div class="service-form">
-            <h4>Contact Us About Our Services</h4>
-            <form id="serviceForm">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" rows="4" placeholder="Your question or request..." required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-        </div>
-    </section>
-</main>
+            if (acceptCookies) {
+                acceptCookies.addEventListener('click', function () {
+                    alert('All cookies have been accepted. Thank you!');
+                });
+            }
 
-<!-- Footer -->
-<footer class="footer-section">
-    <section class="contact-us">
-        <h3>CONTACT US</h3>
-        <p><strong>Email:</strong> medDecode@team.com</p>
-        <p><strong>Support:</strong> 24/7 online assistance</p>
-        <p><strong>Social Media:</strong> Instagram | Facebook | Telegram</p>
-    </section>
+            if (rejectCookies) {
+                rejectCookies.addEventListener('click', function () {
+                    alert('Non-essential cookies have been rejected. Only necessary cookies will be used.');
+                });
+            }
 
-    <section class="service">
-        <h3>SERVICE</h3>
-        <ul>
-            <li><a href="service.html#privacy-policy" style="text-decoration: none; color: black;">Privacy Policy</a></li>
-            <li><a href="service.html#data-security" style="text-decoration: none; color: black;">Data Security</a></li>
-            <li><a href="service.html#cookies-policy" style="text-decoration: none; color: black;">Cookies Policy</a></li>
-            <li><a href="service.html#accessibility" style="text-decoration: none; color: black;">Accessibility Statement</a></li>
-            <li><a href="service.html#service-limitations" style="text-decoration: none; color: black;">Service Limitations</a></li>
-        </ul>
-    </section>
-</footer>
+            // FAQ акордеон
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function () {
+                    const answer = this.nextElementSibling;
+                    const icon = this.querySelector('i');
 
-<script>
-document.getElementById('serviceForm').addEventListener('submit', (e) => {
-    e.preventDefault();
-    alert('Thank you for your message! We will get back to you regarding our services shortly.');
-    e.target.reset();
-});
-</script>
+                    this.classList.toggle('active');
+                    answer.classList.toggle('active');
 
+                    if (this.classList.contains('active')) {
+                        icon.style.transform = 'rotate(180deg)';
+                    } else {
+                        icon.style.transform = 'rotate(0deg)';
+                    }
+
+                    faqQuestions.forEach(otherQuestion => {
+                        if (otherQuestion !== this) {
+                            otherQuestion.classList.remove('active');
+                            otherQuestion.nextElementSibling.classList.remove('active');
+                            otherQuestion.querySelector('i').style.transform = 'rotate(0deg)';
+                        }
+                    });
+                });
+            });
+
+            // Плавна прокрутка по навігації
+            document.querySelectorAll('.service-nav-link').forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Звіт про проблеми доступності
+            const reportButton = document.querySelector('.feedback-request .btn');
+            if (reportButton) {
+                reportButton.addEventListener('click', function () {
+                    alert('Thank you for helping us improve accessibility! Please describe the issue you encountered.');
+                });
+            }
+        });
+
+        // Функції валідації форми
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+
+        function showError(input, message) {
+            const formGroup = input.closest('.form-group');
+            let error = formGroup.querySelector('.error-message');
+
+            if (!error) {
+                error = document.createElement('div');
+                error.className = 'error-message';
+                formGroup.appendChild(error);
+            }
+
+            error.textContent = message;
+            input.classList.add('error');
+        }
+
+        function clearError(input) {
+            const formGroup = input.closest('.form-group');
+            const error = formGroup.querySelector('.error-message');
+
+            if (error) {
+                error.remove();
+            }
+
+            input.classList.remove('error');
+        }
+    </script>
+    <script src="js/script.js"></script>
 </body>
+
 </html>
