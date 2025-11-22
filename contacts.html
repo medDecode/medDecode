@@ -1,181 +1,373 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>medDecode - Contacts</title>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        text-align: center;
-        background-color: #f9f9f9;
-    }
-
-    /* Header */
-    header {
-        background-color: #e0f5e0;
-        padding: 15px;
-    }
-
-    header nav {
-        display: flex;
-        justify-content: center;
-        gap: 30px;
-        font-size: 18px;
-        font-weight: bold;
-    }
-
-    header nav a {
-        text-decoration: none;
-        color: black;
-        font-weight: normal;
-    }
-
-    header nav a:hover {
-        text-decoration: underline;
-    }
-
-    /* Main Section */
-    main {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 50px 20px;
-        text-align: left;
-    }
-
-    h1, h2, h3 {
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    .contact-details p {
-        font-size: 16px;
-        margin: 8px 0;
-    }
-
-    .feedback-form {
-        margin-top: 30px;
-    }
-
-    .feedback-form input, .feedback-form textarea {
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 10px;
-        border-radius: 5px;
-        border: 1px solid #ccc;
-        box-sizing: border-box;
-    }
-
-    .feedback-form button {
-        background-color: #2c8c4a;
-        color: white;
-        border: none;
-        padding: 10px 18px;
-        border-radius: 5px;
-        cursor: pointer;
-        font-weight: bold;
-    }
-
-    .feedback-form button:hover {
-        background-color: #256d3b;
-    }
-
-    /* Footer */
-    footer {
-        display: flex;
-        justify-content: center;
-        gap: 200px;
-        padding: 40px 0;
-        background-color: #e0f5e0;
-    }
-
-    .contact-us, .service {
-        text-align: left;
-    }
-
-    .contact-us h3, .service h3 {
-        margin-bottom: 10px;
-        text-align: center;
-    }
-
-    .service ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    .service li {
-        margin-bottom: 5px;
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>medDecode - Contacts</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Odor+Mean+Chey&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Average+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
 
-<!-- Header -->
-<header>
-    <nav>
-        <a href="index.html">HOME</a>
-        <a href="specialists.html">SPECIALISTS</a>
-        <a href="decoding.html">DECODING</a>
-        <a href="contacts.html">CONTACTS</a>
-        <a href="service.html">SERVICE</a>
-    </nav>
-</header>
+<body class="app-layout">
+    <div class="hero-block">
+        <header class="header">
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="images/colba.png" alt="Колба">
+                    <span>medDecode</span>
+                </div>
 
-<!-- Main Section -->
-<main>
-    <h1>medDecode</h1>
-    <h2>Your trusted online medical assistant</h2>
+                <nav class="desktop-nav">
+                    <a href="index.html">HOME</a>
+                    <a href="decoding.html">DECODING</a>
+                    <a href="specialists.html">SPECIALISTS</a>
+                    <a href="service.html">SERVICES</a>
+                    <a href="contacts.html" class="active">CONTACTS</a>
+                </nav>
 
-    <section class="contact-details">
-        <h3>Contact Information</h3>
-        <p><strong>Email:</strong> medDecode@team.com</p>
-        <p><strong>Support:</strong> Available 24/7 for your questions</p>
-        <p><strong>Social Media:</strong> Instagram | Facebook | Telegram</p>
-        <p><strong>Note:</strong> medDecode is an online platform that helps users interpret medical test results and receive digital consultations. We do not operate any physical clinic or office.</p>
+                <button class="mobile-nav-toggle" aria-label="Відкрити меню">☰</button>
+
+                <div class="top-right">
+                    <i class="fas fa-globe"></i>
+                </div>
+            </div>
+
+            <nav class="mobile-nav">
+                <a href="index.html">HOME</a>
+                <a href="decoding.html">DECODING</a>
+                <a href="specialists.html">SPECIALISTS</a>
+                <a href="service.html">SERVICES</a>
+                <a href="contacts.html" class="active">CONTACTS</a>
+            </nav>
+        </header>
+
+        <main>
+            <section class="contacts-hero">
+                <div class="hero-grid-contact">
+                    <div class="contacts-hero-grid">
+                        <div class="contacts-content">
+                            <h1>Get in Touch</h1>
+                            <p>We're here to help you with any questions about our medical analysis services and
+                                specialist consultations.</p>
+                            <div class="contacts-stats">
+                                <div class="stat-item">
+                                    <div class="stat-value">24/7</div>
+                                    <div class="stat-label">Support Available</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">1h</div>
+                                    <div class="stat-label">Avg. Response Time</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">100%</div>
+                                    <div class="stat-label">Online Service</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="contact-sections container">
+                <div class="contact-grid">
+                    <div class="contact-info-card card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-info-circle"></i> Contact Information</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="contact-details">
+                                <div class="contact-item">
+                                    <div class="contact-icon">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div class="contact-text">
+                                        <strong>Email</strong>
+                                        <p>medDecode@team.com</p>
+                                        <small>Primary contact for all inquiries</small>
+                                    </div>
+                                </div>
+
+                                <div class="contact-item">
+                                    <div class="contact-icon">
+                                        <i class="fas fa-headset"></i>
+                                    </div>
+                                    <div class="contact-text">
+                                        <strong>Support</strong>
+                                        <p>Available 24/7</p>
+                                        <small>Quick responses to your questions</small>
+                                    </div>
+                                </div>
+
+                                <div class="contact-item">
+                                    <div class="contact-icon">
+                                        <i class="fas fa-share-alt"></i>
+                                    </div>
+                                    <div class="contact-text">
+                                        <strong>Social Media</strong>
+                                        <div class="social-links">
+                                            <a href="#" class="social-link"><i class="fab fa-instagram"></i>
+                                                Instagram</a>
+                                            <a href="#" class="social-link"><i class="fab fa-facebook"></i> Facebook</a>
+                                            <a href="#" class="social-link"><i class="fab fa-telegram"></i> Telegram</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="contact-note">
+                                    <i class="fas fa-exclamation-circle"></i>
+                                    <p><strong>Important Note:</strong> medDecode is an online platform that helps users
+                                        interpret medical test results and receive digital consultations. We do not
+                                        operate any physical clinic or office.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="feedback-form-card card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-comment-dots"></i> Send us a Message</h3>
+                        </div>
+                        <div class="card-body">
+                            <form id="feedbackForm" novalidate>
+                                <div class="form-group">
+                                    <label class="form-label">Your Name</label>
+                                    <input type="text" class="form-control" name="name"
+                                        placeholder="Enter your full name" required>
+                                    <div class="error-message">Будь ласка, введіть ваше ім'я</div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label">Email Address</label>
+                                    <input type="email" class="form-control" name="email" placeholder="Enter your email"
+                                        required>
+                                    <div class="error-message">Будь ласка, введіть коректний email</div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label">Subject</label>
+                                    <select class="form-control" name="subject" required>
+                                        <option value="" disabled selected>Select subject</option>
+                                        <option value="general">General Inquiry</option>
+                                        <option value="technical">Technical Support</option>
+                                        <option value="billing">Billing Question</option>
+                                        <option value="partnership">Partnership</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                    <div class="error-message">Будь ласка, оберіть тему повідомлення</div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label">Your Message</label>
+                                    <textarea class="form-control" name="message" rows="5"
+                                        placeholder="Please describe your inquiry in detail..." required></textarea>
+                                    <div class="error-message">Будь ласка, введіть ваше повідомлення</div>
+                                </div>
+
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn-primary btn-large">
+                                        <i class="fas fa-paper-plane"></i>
+                                        Send Message
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="faq-section">
+                <div class="container">
+                    <h2 class="text-center">Frequently Asked Questions</h2>
+                    <p class="text-center subheading">Quick answers to common questions about our services</p>
+
+                    <div class="faq-grid">
+                        <div class="faq-card card">
+                            <div class="faq-question">
+                                <h4>How quickly will I receive a response?</h4>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>We typically respond to all inquiries within 1-2 hours during business hours. For
+                                    urgent matters, our 24/7 support team is always available to assist you.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-card card">
+                            <div class="faq-question">
+                                <h4>Can I get medical advice through this contact form?</h4>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>For medical advice, please use our specialist consultation service. This contact form
+                                    is for general inquiries, technical support, and service-related questions.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-card card">
+                            <div class="faq-question">
+                                <h4>Do you have a physical office I can visit?</h4>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>No, medDecode operates entirely online. We provide digital medical analysis and
+                                    remote consultations with certified specialists.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-card card">
+                            <div class="faq-question">
+                                <h4>How can I become a specialist on your platform?</h4>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>We're always looking for qualified medical professionals! Please send us your
+                                    credentials and experience through the partnership option in the contact form.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="support-channels container">
+                <div class="support-grid">
+                    <div class="support-card card text-center">
+                        <div class="support-icon">
+                            <i class="fas fa-envelope-open-text"></i>
+                        </div>
+                        <h4>Email Support</h4>
+                        <p>Send detailed inquiries and get comprehensive responses from our team.</p>
+                        <a href="mailto:medDecode@team.com" class="btn btn-secondary">Write Email</a>
+                    </div>
+
+                    <div class="support-card card text-center">
+                        <div class="support-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h4>Live Chat</h4>
+                        <p>Get instant answers to your questions through our live chat service.</p>
+                        <button class="btn btn-secondary" onclick="alert('Live chat would open here')">Start
+                            Chat</button>
+                    </div>
+
+                    <div class="support-card card text-center">
+                        <div class="support-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h4>Help Center</h4>
+                        <p>Browse our comprehensive knowledge base for instant solutions.</p>
+                        <a href="service.html" class="btn btn-secondary">Visit Help Center</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-buttons">
+                <a href="decoding.html" class="footer-btn btn">Download analyses</a>
+                <a href="specialists.html" class="footer-btn btn">Find a specialist</a>
+            </div>
+
+            <div class="footer-grid">
+                <div class="footer-logo text-center">
+                    <img src="images/colba.png" alt="Logo">
+                    <p class="logo-text">medDecode</p>
+                </div>
+
+                <div class="footer-contact">
+                    <h3>CONTACT US</h3>
+                    <p><strong>Email</strong><br>medDecode@team.com</p>
+                    <p><strong>Phone</strong><br>+44 123 456 7890</p>
+                    <p><strong>Social Media</strong></p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-telegram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-service">
+                    <h3>SERVICE</h3>
+                    <ul>
+                        <li><a href="service.html#privacy-policy">Privacy Policy</a></li>
+                        <li><a href="service.html#data-security">Data Security</a></li>
+                        <li><a href="service.html#cookies-policy">Cookies Policy</a></li>
+                        <li><a href="service.html#accessibility">Accessibility Statement</a></li>
+                        <li><a href="service.html#service-limitations">Service Limitations</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <section class="profile-section" id="profile-page" style="display:none;">
     </section>
 
-    <section class="feedback-form">
-        <h3>Send us a message</h3>
-        <form id="feedbackForm">
-            <input type="text" name="name" placeholder="Your name" required>
-            <input type="email" name="email" placeholder="Your email" required>
-            <textarea name="message" rows="4" placeholder="Your message..." required></textarea>
-            <button type="submit">Send</button>
-        </form>
-    </section>
-</main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('feedbackForm');
 
-<!-- Footer -->
-<footer>
-    <section class="contact-us">
-        <h3>Contact Us</h3>
-        <p><strong>Email:</strong> medDecode@team.com</p>
-        <p><strong>Support:</strong> 24/7 online assistance</p>
-        <p><strong>Social Media:</strong> Instagram | Facebook | Telegram</p>
-    </section>
-    <section class="service">
-        <h3>Service</h3>
-        <ul>
-            <li><a href="service.html#privacy-policy" style="text-decoration: none; color: black;">Privacy Policy</a></li>
-            <li><a href="service.html#data-security" style="text-decoration: none; color: black;">Data Security</a></li>
-            <li><a href="service.html#cookies-policy" style="text-decoration: none; color: black;">Cookies Policy</a></li>
-            <li><a href="service.html#accessibility" style="text-decoration: none; color: black;">Accessibility Statement</a></li>
-            <li><a href="service.html#service-limitations" style="text-decoration: none; color: black;">Service Limitations</a></li>
-        </ul>
-    </section>
-</footer>
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function () {
+                    const answer = this.nextElementSibling;
+                    const icon = this.querySelector('i');
 
-<script>
-document.getElementById('feedbackForm').addEventListener('submit', (e) => {
-    e.preventDefault();
-    alert('Thank you for your message! We will get back to you shortly.');
-    e.target.reset();
-});
-</script>
+                    this.classList.toggle('active');
+                    answer.classList.toggle('active');
 
+                    if (this.classList.contains('active')) {
+                        icon.style.transform = 'rotate(180deg)';
+                    } else {
+                        icon.style.transform = 'rotate(0deg)';
+                    }
+                });
+            });
+
+            if (form) {
+                form.addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    const name = form.elements['name'].value.trim();
+                    const email = form.elements['email'].value.trim();
+                    const subject = form.elements['subject'].value;
+                    const message = form.elements['message'].value.trim();
+
+                    if (name && email && subject && message) {
+                        const alert = document.createElement('div');
+                        alert.className = 'alert alert-success';
+                        alert.innerHTML = `
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <strong>Thank you for your message!</strong><br>
+                                We will get back to you within 1-2 hours.
+                            </div>
+                        `;
+                        form.parentNode.insertBefore(alert, form);
+
+                        form.reset();
+
+                        setTimeout(() => {
+                            alert.remove();
+                        }, 5000);
+                    }
+                });
+            }
+
+            const socialLinks = document.querySelectorAll('.social-link');
+            socialLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const platform = this.querySelector('i').className.split(' ')[1].replace('fa-', '');
+                    alert(`You would be redirected to our ${platform} page`);
+                });
+            });
+        });
+    </script>
+    <script src="js/script.js"></script>
 </body>
-</html>
 
+</html>
