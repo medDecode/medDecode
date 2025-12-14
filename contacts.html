@@ -13,6 +13,7 @@
 </head>
 
 <body class="app-layout">
+    <!-- HERO BLOCK -->
     <div class="hero-block">
         <header class="header">
             <div class="nav-container">
@@ -21,6 +22,7 @@
                     <span>medDecode</span>
                 </div>
 
+                <!-- Desktop Navigation -->
                 <nav class="desktop-nav">
                     <a href="index.html">HOME</a>
                     <a href="decoding.html">DECODING</a>
@@ -29,13 +31,17 @@
                     <a href="contacts.html" class="active">CONTACTS</a>
                 </nav>
 
+                <!-- Mobile Navigation Toggle -->
                 <button class="mobile-nav-toggle" aria-label="Відкрити меню">☰</button>
 
                 <div class="top-right">
-                    <i class="fas fa-globe"></i>
+                    <button id="themeToggle" aria-label="Toggle theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
                 </div>
             </div>
 
+            <!-- Mobile Navigation -->
             <nav class="mobile-nav">
                 <a href="index.html">HOME</a>
                 <a href="decoding.html">DECODING</a>
@@ -46,6 +52,7 @@
         </header>
 
         <main>
+            <!-- Contacts Hero Section -->
             <section class="contacts-hero">
                 <div class="hero-grid-contact">
                     <div class="contacts-hero-grid">
@@ -72,8 +79,10 @@
                 </div>
             </section>
 
+            <!-- Contact Sections -->
             <section class="contact-sections container">
                 <div class="contact-grid">
+                    <!-- Contact Information -->
                     <div class="contact-info-card card">
                         <div class="card-header">
                             <h3><i class="fas fa-info-circle"></i> Contact Information</h3>
@@ -127,6 +136,7 @@
                         </div>
                     </div>
 
+                    <!-- Feedback Form -->
                     <div class="feedback-form-card card">
                         <div class="card-header">
                             <h3><i class="fas fa-comment-dots"></i> Send us a Message</h3>
@@ -137,14 +147,14 @@
                                     <label class="form-label">Your Name</label>
                                     <input type="text" class="form-control" name="name"
                                         placeholder="Enter your full name" required>
-                                    <div class="error-message">Будь ласка, введіть ваше ім'я</div>
+                                    <div class="error-message">Please enter your name.</div>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="form-label">Email Address</label>
                                     <input type="email" class="form-control" name="email" placeholder="Enter your email"
                                         required>
-                                    <div class="error-message">Будь ласка, введіть коректний email</div>
+                                    <div class="error-message">Please enter a valid email.</div>
                                 </div>
 
                                 <div class="form-group">
@@ -157,14 +167,14 @@
                                         <option value="partnership">Partnership</option>
                                         <option value="other">Other</option>
                                     </select>
-                                    <div class="error-message">Будь ласка, оберіть тему повідомлення</div>
+                                    <div class="error-message">Please select a message subject</div>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="form-label">Your Message</label>
                                     <textarea class="form-control" name="message" rows="5"
                                         placeholder="Please describe your inquiry in detail..." required></textarea>
-                                    <div class="error-message">Будь ласка, введіть ваше повідомлення</div>
+                                    <div class="error-message">Please enter your message.</div>
                                 </div>
 
                                 <div class="form-actions">
@@ -179,6 +189,7 @@
                 </div>
             </section>
 
+            <!-- FAQ Section -->
             <section class="faq-section">
                 <div class="container">
                     <h2 class="text-center">Frequently Asked Questions</h2>
@@ -232,6 +243,7 @@
                 </div>
             </section>
 
+            <!-- Support Channels -->
             <section class="support-channels container">
                 <div class="support-grid">
                     <div class="support-card card text-center">
@@ -303,22 +315,27 @@
         </footer>
     </div>
 
+    <!-- PROFILE SECTION -->
     <section class="profile-section" id="profile-page" style="display:none;">
+        <!-- Profile content from index.html -->
     </section>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const form = document.getElementById('feedbackForm');
 
+            // FAQ Accordion
             const faqQuestions = document.querySelectorAll('.faq-question');
             faqQuestions.forEach(question => {
                 question.addEventListener('click', function () {
                     const answer = this.nextElementSibling;
                     const icon = this.querySelector('i');
 
+                    // Toggle active class
                     this.classList.toggle('active');
                     answer.classList.toggle('active');
 
+                    // Rotate icon
                     if (this.classList.contains('active')) {
                         icon.style.transform = 'rotate(180deg)';
                     } else {
@@ -331,12 +348,14 @@
                 form.addEventListener('submit', function (e) {
                     e.preventDefault();
 
+                    // Basic validation
                     const name = form.elements['name'].value.trim();
                     const email = form.elements['email'].value.trim();
                     const subject = form.elements['subject'].value;
                     const message = form.elements['message'].value.trim();
 
                     if (name && email && subject && message) {
+                        // Show success message
                         const alert = document.createElement('div');
                         alert.className = 'alert alert-success';
                         alert.innerHTML = `
@@ -348,8 +367,10 @@
                         `;
                         form.parentNode.insertBefore(alert, form);
 
+                        // Reset form
                         form.reset();
 
+                        // Remove alert after 5 seconds
                         setTimeout(() => {
                             alert.remove();
                         }, 5000);
@@ -357,6 +378,7 @@
                 });
             }
 
+            // Social links interaction
             const socialLinks = document.querySelectorAll('.social-link');
             socialLinks.forEach(link => {
                 link.addEventListener('click', function (e) {
@@ -368,6 +390,7 @@
         });
     </script>
     <script src="js/script.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
