@@ -13,6 +13,7 @@
 </head>
 
 <body class="app-layout">
+    <!-- HERO BLOCK -->
     <div class="hero-block">
         <header class="header">
             <div class="nav-container">
@@ -21,6 +22,7 @@
                     <span>medDecode</span>
                 </div>
 
+                <!-- Desktop Navigation -->
                 <nav class="desktop-nav">
                     <a href="index.html">HOME</a>
                     <a href="decoding.html" class="active">DECODING</a>
@@ -29,13 +31,17 @@
                     <a href="contacts.html">CONTACTS</a>
                 </nav>
 
+                <!-- Mobile Navigation Toggle -->
                 <button class="mobile-nav-toggle" aria-label="Відкрити меню">☰</button>
 
                 <div class="top-right">
-                    <i class="fas fa-globe"></i>
+                    <button id="themeToggle" aria-label="Toggle theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
                 </div>
             </div>
 
+            <!-- Mobile Navigation -->
             <nav class="mobile-nav">
                 <a href="index.html">HOME</a>
                 <a href="decoding.html" class="active">DECODING</a>
@@ -46,6 +52,7 @@
         </header>
 
         <main>
+            <!-- Decoding Hero Section -->
             <section class="decoding-hero">
                 <div class="decoding-hero-grid">
                     <div class="decoding-content">
@@ -73,6 +80,7 @@
                 </div>
             </section>
 
+            <!-- Analysis Form Section -->
             <section class="analysis-section container">
                 <div class="analysis-card card">
                     <div class="analysis-header text-center">
@@ -305,6 +313,7 @@
                 </div>
             </section>
 
+            <!-- Features Section -->
             <section class="features-section">
                 <div class="container">
                     <h2 class="text-center">Why Choose Our Decoding Service?</h2>
@@ -380,13 +389,16 @@
         </footer>
     </div>
 
+    <!-- PROFILE SECTION (same as index.html) -->
     <section class="profile-section" id="profile-page" style="display:none;">
+        <!-- Profile content from index.html -->
     </section>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const form = document.getElementById('analyzerForm');
 
+            // Analysis norms data
             const norms = {
                 'Hemoglobin': { min: 120, max: 160, unit: 'g/L' },
                 'Glucose': { min: 3.9, max: 6.1, unit: 'mmol/L' },
@@ -417,8 +429,10 @@
                         const norm = norms[indicator];
 
                         if (norm) {
+                            // Виводимо норму
                             normInput.value = `${norm.min}-${norm.max} ${norm.unit}`;
 
+                            // Визначаємо статус
                             if (value >= norm.min && value <= norm.max) {
                                 statusInput.value = 'Normal';
                                 statusInput.className = 'form-control status-normal';
@@ -431,11 +445,13 @@
                             }
                         }
                     } else {
+                        // Очистити поле, якщо немає даних
                         normInput.value = '';
                         statusInput.value = '';
                     }
                 });
 
+                // Показ повідомлення про успішну обробку
                 const alert = document.createElement('div');
                 alert.className = 'alert alert-success';
                 alert.innerHTML = `<i class="fas fa-check-circle"></i> Analysis completed successfully!`;
@@ -445,6 +461,7 @@
         });
     </script>
     <script src="js/script.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
