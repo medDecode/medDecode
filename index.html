@@ -13,6 +13,7 @@
 </head>
 
 <body class="app-layout">
+    <!-- HERO BLOCK -->
     <div class="hero-block">
         <header class="header">
             <div class="nav-container">
@@ -21,6 +22,7 @@
                     <span>medDecode</span>
                 </div>
 
+                <!-- Desktop Navigation -->
                 <nav class="desktop-nav">
                     <a href="index.html" class="active">HOME</a>
                     <a href="decoding.html">DECODING</a>
@@ -29,21 +31,25 @@
                     <a href="contacts.html">CONTACTS</a>
                 </nav>
 
-                <button class="mobile-nav-toggle" aria-label="Відкрити меню">☰</button>
+                <!-- Mobile Navigation Toggle -->
+                <button class="mobile-nav-toggle" aria-label="Open menu">☰</button>
 
                 <div class="top-right">
                     <i class="fas fa-user-circle" title="My Profile" onclick="showProfile()"></i>
-                    <i class="fas fa-globe"></i>
-                </div>
-            </div>
 
-            <nav class="mobile-nav">
-                <a href="index.html" class="active">HOME</a>
-                <a href="decoding.html">DECODING</a>
-                <a href="specialists.html">SPECIALISTS</a>
-                <a href="service.html">SERVICES</a>
-                <a href="contacts.html">CONTACTS</a>
-            </nav>
+                    <button id="themeToggle" aria-label="Toggle theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+
+                <!-- Mobile Navigation -->
+                <nav class="mobile-nav">
+                    <a href="index.html" class="active">HOME</a>
+                    <a href="decoding.html">DECODING</a>
+                    <a href="specialists.html">SPECIALISTS</a>
+                    <a href="service.html">SERVICES</a>
+                    <a href="contacts.html">CONTACTS</a>
+                </nav>
         </header>
 
         <main>
@@ -53,22 +59,22 @@
                     <form novalidate>
                         <div class="form-group">
                             <input type="text" class="form-control" placeholder="Name" required>
-                            <div class="error-message">Будь ласка, введіть ваше ім'я</div>
+                            <div class="error-message">Please enter your name.</div>
                         </div>
                         <div class="form-group">
                             <input type="text" class="form-control" placeholder="Last name" required>
-                            <div class="error-message">Будь ласка, введіть ваше прізвище</div>
+                            <div class="error-message">Please enter your last name.</div>
                         </div>
                         <div class="form-group">
                             <input type="email" class="form-control" placeholder="Email" required>
-                            <div class="error-message">Будь ласка, введіть коректний email</div>
+                            <div class="error-message">Please enter a valid email.</div>
                         </div>
                         <div class="form-group password-toggle">
                             <input type="password" class="form-control" placeholder="Password" required minlength="8">
                             <button type="button" class="toggle-password">
                                 <i class="fas fa-eye-slash"></i>
                             </button>
-                            <div class="error-message">Пароль повинен містити щонайменше 8 символів</div>
+                            <div class="error-message">Password must contain at least 8 characters</div>
                         </div>
                         <button type="submit" class="btn btn-primary btn-block">Sign up</button>
                     </form>
@@ -84,6 +90,7 @@
                 </div>
             </div>
 
+            <!-- ABOUT & SPECIALISTS -->
             <section class="about-section container">
                 <div class="about-grid">
                     <div class="about-image">
@@ -184,14 +191,17 @@
         </footer>
     </div>
 
+    <!-- PROFILE SECTION -->
     <section class="profile-section" id="profile-page" style="display:none;">
         <div class="profile-wrapper">
+            <!-- Ліва панель меню -->
             <div class="profile-sidebar">
                 <button class="menu-btn active" data-panel="home"
                     onclick="window.location.href='index.html'">Home</button>
                 <button class="menu-btn" data-panel="history">Analysis history</button>
                 <button class="menu-btn" data-panel="notification">Notification</button>
 
+                <!-- Settings з підменю -->
                 <div class="settings-menu">
                     <button class="menu-btn" id="settings-btn">Settings</button>
                     <div class="submenu" id="settings-submenu">
@@ -204,6 +214,7 @@
                 <button class="menu-btn logout-btn">Log out</button>
             </div>
 
+            <!-- Права панель контенту -->
             <div class="profile-content">
                 <div id="home" class="panel active">
                     <h2 class="dashboard-title text-center">Welcome to your dashboard!</h2>
@@ -219,6 +230,7 @@
                     </div>
 
                     <form class="profile-info-form">
+                        <!-- Перший рядок: First Name / Last Name -->
                         <div class="form-row">
                             <div class="form-field">
                                 <label>First Name</label>
@@ -230,6 +242,7 @@
                             </div>
                         </div>
 
+                        <!-- Другий рядок: Email / Mobile Number -->
                         <div class="form-row">
                             <div class="form-field">
                                 <label>Email</label>
@@ -241,6 +254,7 @@
                             </div>
                         </div>
 
+                        <!-- Третій рядок: Gender -->
                         <div class="form-row">
                             <label>Gender</label>
                             <div class="gender-buttons">
@@ -249,14 +263,66 @@
                             </div>
                         </div>
 
+                        <!-- Кнопка Save -->
                         <button type="submit" class="btn btn-success" id="saveBtn">Save Changes</button>
                     </form>
+                </div>
+                <div id="history" class="panel">
+                    <h2 class="dashboard-title">History of your analyses</h2>
+
+                    <div class="history-list">
+                        <!-- Картка аналізу 1 -->
+                        <div class="history-card">
+                            <div class="history-icon">
+                                <i class="fas fa-file-medical-alt"></i>
+                            </div>
+                            <div class="history-info">
+                                <h3>Complete blood count</h3>
+                                <span class="date">12 December 2025</span>
+                                <span class="status status-done">Done</span>
+                            </div>
+                            <button class="btn-view">Review</button>
+                        </div>
+
+                        <!-- Картка аналізу 2 -->
+                        <div class="history-card">
+                            <div class="history-icon">
+                                <i class="fas fa-heartbeat"></i>
+                            </div>
+                            <div class="history-info">
+                                <h3>Blood biochemistry</h3>
+                                <span class="date">05 November 2025</span>
+                                <span class="status status-done">Done</span>
+                            </div>
+                            <button class="btn-view">Review</button>
+                        </div>
+
+                        <!-- Картка аналізу 3 -->
+                        <div class="history-card">
+                            <div class="history-icon">
+                                <i class="fas fa-vial"></i>
+                            </div>
+                            <div class="history-info">
+                                <h3>Hormonal panel</h3>
+                                <span class="date">20 October 2025</span>
+                                <span class="status status-pending">In processing</span>
+                            </div>
+                            <button class="btn-view" disabled>Expectation</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Вкладка: Сповіщення (Заготовка) -->
+                <div id="notification" class="panel">
+                    <h2>Notification</h2>
+                    <p>You have no new notifications.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <script src="js/script.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
