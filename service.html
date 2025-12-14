@@ -2,7 +2,6 @@
 <html lang="uk">
 
 <head>
-    <!-- Мета-теги та підключення ресурсів -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>medDecode - Сервіс</title>
@@ -14,9 +13,8 @@
 </head>
 
 <body class="app-layout">
-    <!-- Головний контейнер сторінки -->
+    <!-- Header -->
     <div class="hero-block">
-        <!-- Навігаційна панель -->
         <header class="header">
             <div class="nav-container">
                 <div class="logo">
@@ -24,7 +22,7 @@
                     <span>medDecode</span>
                 </div>
 
-                <!-- Основна навігація -->
+                <!-- Desktop Navigation -->
                 <nav class="desktop-nav">
                     <a href="index.html">HOME</a>
                     <a href="decoding.html">DECODING</a>
@@ -33,15 +31,17 @@
                     <a href="contacts.html">CONTACTS</a>
                 </nav>
 
-                <!-- Кнопка мобільного меню -->
+                <!-- Mobile Navigation Toggle -->
                 <button class="mobile-nav-toggle" aria-label="Відкрити меню">☰</button>
 
                 <div class="top-right">
-                    <i class="fas fa-globe"></i>
+                    <button id="themeToggle" aria-label="Toggle theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
                 </div>
             </div>
 
-            <!-- Мобільна навігація -->
+            <!-- Mobile Navigation -->
             <nav class="mobile-nav">
                 <a href="index.html">HOME</a>
                 <a href="decoding.html">DECODING</a>
@@ -51,9 +51,8 @@
             </nav>
         </header>
 
-        <!-- Основний контент сторінки -->
+        <!-- Main Section -->
         <main class="container">
-            <!-- Герой-секція -->
             <div class="hero-grid service">
                 <div class="hero text-center">
                     <h1>medDecode</h1>
@@ -65,9 +64,8 @@
             </div>
         </main>
 
-        <!-- Секція інформації про сервіс -->
+
         <section class="service-info">
-            <!-- Навігація по розділам -->
             <div class="service-navigation card">
                 <h3 class="text-center">Quick Navigation</h3>
                 <nav class="service-nav-links">
@@ -76,12 +74,11 @@
                     <a href="#cookies-policy" class="service-nav-link">Cookies Policy</a>
                     <a href="#accessibility" class="service-nav-link">Accessibility</a>
                     <a href="#service-limitations" class="service-nav-link">Service Limitations</a>
+                    <!-- <a href="#faq" class="service-nav-link">FAQ</a> -->
                 </nav>
             </div>
 
-            <!-- Основний контент сервісу -->
             <div class="service-content">
-                <!-- Політика конфіденційності -->
                 <div id="privacy-policy" class="service-section card">
                     <div class="service-header">
                         <h4>Privacy Policy</h4>
@@ -116,7 +113,6 @@
                     </div>
                 </div>
 
-                <!-- Захист даних -->
                 <div id="data-security" class="service-section card">
                     <div class="service-header">
                         <h4>Data Security</h4>
@@ -157,7 +153,6 @@
                     </div>
                 </div>
 
-                <!-- Політика cookies -->
                 <div id="cookies-policy" class="service-section card">
                     <div class="service-header">
                         <h4>Cookies Policy</h4>
@@ -208,7 +203,6 @@
                     </div>
                 </div>
 
-                <!-- Доступність -->
                 <div id="accessibility" class="service-section card">
                     <div class="service-header">
                         <h4>Accessibility Statement</h4>
@@ -242,7 +236,6 @@
                     </div>
                 </div>
 
-                <!-- Обмеження сервісу -->
                 <div id="service-limitations" class="service-section card">
                     <div class="service-header">
                         <h4>Service Limitations</h4>
@@ -280,21 +273,25 @@
                             expertise of healthcare professionals.</p>
                     </div>
                 </div>
+
+                <!--
+                      <div id="faq" class="service-section card"> ... FAQ ... </div>
+                      (kept commented as in original)
+                    -->
             </div>
 
-            <!-- Форма зворотного зв'язку -->
             <div class="service-contact card">
                 <h4 class="text-center">Contact Us About Our Services</h4>
                 <form id="serviceForm" novalidate>
                     <div class="form-grid">
                         <div class="form-group">
                             <input type="text" class="form-control" name="name" placeholder="Your Name" required>
-                            <div class="error-message">Будь ласка, введіть ваше ім'я</div>
+                            <div class="error-message">БPlease enter your name.</div>
                         </div>
 
                         <div class="form-group">
                             <input type="email" class="form-control" name="email" placeholder="Your Email" required>
-                            <div class="error-message">Будь ласка, введіть коректний email</div>
+                            <div class="error-message">Please enter a valid email.</div>
                         </div>
                     </div>
 
@@ -308,13 +305,13 @@
                             <option value="limitations">Service Limitations</option>
                             <option value="other">Other</option>
                         </select>
-                        <div class="error-message">Будь ласка, оберіть тему</div>
+                        <div class="error-message">Please choose a topic</div>
                     </div>
 
                     <div class="form-group">
                         <textarea class="form-control" name="message" rows="4" placeholder="Your question or request..."
                             required></textarea>
-                        <div class="error-message">Будь ласка, введіть ваше повідомлення</div>
+                        <div class="error-message">Please enter your message.</div>
                     </div>
 
                     <div class="form-group">
@@ -328,7 +325,6 @@
                     <button type="submit" class="btn btn-primary btn-block">Send Message</button>
                 </form>
 
-                <!-- Альтернативні методи зв'язку -->
                 <div class="contact-alternatives">
                     <p><strong>Prefer other methods?</strong></p>
                     <div class="contact-methods">
@@ -348,8 +344,9 @@
                 </div>
             </div>
         </section>
+        </main>
 
-        <!-- Футер сторінки -->
+        <!-- Footer -->
         <footer class="footer">
             <div class="footer-grid">
                 <div class="footer-logo text-center">
@@ -381,17 +378,18 @@
                 </div>
             </div>
         </footer>
-    </div>
+    </div> <!-- end .hero-block -->
 
-    <!-- JavaScript функціонал -->
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // Обробка форми зворотного зв'язку
+            // Service form handling
             const serviceForm = document.getElementById('serviceForm');
             if (serviceForm) {
                 serviceForm.addEventListener('submit', function (e) {
                     e.preventDefault();
 
+                    // Basic validation
                     const name = serviceForm.elements['name'].value.trim();
                     const email = serviceForm.elements['email'].value.trim();
                     const subject = serviceForm.elements['subject'].value;
@@ -399,13 +397,16 @@
                     const agreeTerms = serviceForm.elements['agreeTerms'].checked;
 
                     if (name && email && subject && message && agreeTerms) {
+                        // Show success message
                         const alert = document.createElement('div');
                         alert.className = 'alert alert-success';
                         alert.textContent = 'Thank you for your message! We will get back to you regarding our services shortly.';
                         serviceForm.parentNode.insertBefore(alert, serviceForm);
 
+                        // Reset form
                         serviceForm.reset();
 
+                        // Remove alert after 5 seconds
                         setTimeout(() => {
                             alert.remove();
                         }, 5000);
@@ -413,38 +414,43 @@
                 });
             }
 
-            // Управління cookies
+            // Cookie controls
             const acceptCookies = document.getElementById('acceptCookies');
             const rejectCookies = document.getElementById('rejectCookies');
 
             if (acceptCookies) {
                 acceptCookies.addEventListener('click', function () {
                     alert('All cookies have been accepted. Thank you!');
+                    // In a real application, this would set a cookie preference
                 });
             }
 
             if (rejectCookies) {
                 rejectCookies.addEventListener('click', function () {
                     alert('Non-essential cookies have been rejected. Only necessary cookies will be used.');
+                    // In a real application, this would set a cookie preference
                 });
             }
 
-            // FAQ акордеон
+            // FAQ functionality
             const faqQuestions = document.querySelectorAll('.faq-question');
             faqQuestions.forEach(question => {
                 question.addEventListener('click', function () {
                     const answer = this.nextElementSibling;
                     const icon = this.querySelector('i');
 
+                    // Toggle active class
                     this.classList.toggle('active');
                     answer.classList.toggle('active');
 
+                    // Rotate icon
                     if (this.classList.contains('active')) {
                         icon.style.transform = 'rotate(180deg)';
                     } else {
                         icon.style.transform = 'rotate(0deg)';
                     }
 
+                    // Close other FAQs
                     faqQuestions.forEach(otherQuestion => {
                         if (otherQuestion !== this) {
                             otherQuestion.classList.remove('active');
@@ -455,7 +461,7 @@
                 });
             });
 
-            // Плавна прокрутка по навігації
+            // Smooth scrolling for navigation links
             document.querySelectorAll('.service-nav-link').forEach(link => {
                 link.addEventListener('click', function (e) {
                     e.preventDefault();
@@ -471,16 +477,17 @@
                 });
             });
 
-            // Звіт про проблеми доступності
+            // Report accessibility issue
             const reportButton = document.querySelector('.feedback-request .btn');
             if (reportButton) {
                 reportButton.addEventListener('click', function () {
                     alert('Thank you for helping us improve accessibility! Please describe the issue you encountered.');
+                    // In a real application, this would open a form or redirect
                 });
             }
         });
 
-        // Функції валідації форми
+        // Form validation functions
         function validateEmail(email) {
             const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             return re.test(email);
@@ -512,6 +519,7 @@
         }
     </script>
     <script src="js/script.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
