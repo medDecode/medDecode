@@ -2,7 +2,6 @@
 <html lang="uk">
 
 <head>
-    <!-- Мета-теги та ресурси -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>medDecode - Specialists</title>
@@ -14,9 +13,8 @@
 </head>
 
 <body class="app-layout">
-    <!-- Головний контейнер -->
+    <!-- HERO BLOCK -->
     <div class="hero-block">
-        <!-- Навігаційна панель -->
         <header class="header">
             <div class="nav-container">
                 <div class="logo">
@@ -24,7 +22,7 @@
                     <span>medDecode</span>
                 </div>
 
-                <!-- Десктопна навігація -->
+                <!-- Desktop Navigation -->
                 <nav class="desktop-nav">
                     <a href="index.html">HOME</a>
                     <a href="decoding.html">DECODING</a>
@@ -33,15 +31,17 @@
                     <a href="contacts.html">CONTACTS</a>
                 </nav>
 
-                <!-- Кнопка мобільного меню -->
+                <!-- Mobile Navigation Toggle -->
                 <button class="mobile-nav-toggle" aria-label="Відкрити меню">☰</button>
 
                 <div class="top-right">
-                    <i class="fas fa-globe"></i>
+                    <button id="themeToggle" aria-label="Toggle theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
                 </div>
             </div>
 
-            <!-- Мобільна навігація -->
+            <!-- Mobile Navigation -->
             <nav class="mobile-nav">
                 <a href="index.html">HOME</a>
                 <a href="decoding.html">DECODING</a>
@@ -52,7 +52,7 @@
         </header>
 
         <main>
-            <!-- Герой-секція спеціалістів -->
+            <!-- Specialists Hero Section -->
             <section class="specialists-hero">
                 <div class="hero-grid specialist">
                     <div class="specialists-hero-grid">
@@ -82,7 +82,7 @@
                 </div>
             </section>
 
-            <!-- Секція фільтрів -->
+            <!-- Filters Section -->
             <section class="filters-section container">
                 <div class="filters-card card">
                     <h3 class="text-center">Find the Right Specialist</h3>
@@ -130,13 +130,13 @@
                 </div>
             </section>
 
-            <!-- Сітка спеціалістів -->
+            <!-- Specialists Grid Section -->
             <section class="specialists-grid-section container">
                 <h2 class="text-center">Recommended Specialists</h2>
                 <p class="text-center subheading">Choose from our network of certified medical professionals</p>
 
                 <div class="specialists-container" id="specialistsContainer">
-                    <!-- Картка спеціаліста 1 -->
+                    <!-- Specialist Card 1 -->
                     <article class="specialist-card card" data-specialization="dermatologist" data-rating="4.8"
                         data-price="750">
 
@@ -182,7 +182,7 @@
 
                     </article>
 
-                    <!-- Картка спеціаліста 2 -->
+                    <!-- Specialist Card 2 -->
                     <article class="specialist-card card" data-specialization="cardiologist" data-rating="5.0"
                         data-price="950">
                         <button class="favorite-icon" aria-label="Add to favorites">
@@ -222,7 +222,7 @@
                         </div>
                     </article>
 
-                    <!-- Картка спеціаліста 3 -->
+                    <!-- Specialist Card 3 -->
                     <article class="specialist-card card" data-specialization="neurologist" data-rating="4.9"
                         data-price="950">
                         <button class="favorite-icon" aria-label="Add to favorites">
@@ -262,7 +262,7 @@
                         </div>
                     </article>
 
-                    <!-- Картка спеціаліста 4 -->
+                    <!-- Specialist Card 4 -->
                     <article class="specialist-card card" data-specialization="oncologist" data-rating="4.8"
                         data-price="900">
                         <button class="favorite-icon" aria-label="Add to favorites">
@@ -301,9 +301,11 @@
                             </button>
                         </div>
                     </article>
+
+
+                    <!-- Add more specialist cards following the same pattern -->
                 </div>
 
-                <!-- Кнопка завантаження ще -->
                 <div class="load-more text-center">
                     <button class="btn btn-secondary" id="loadMoreBtn">
                         <i class="fas fa-plus"></i>
@@ -312,7 +314,7 @@
                 </div>
             </section>
 
-            <!-- Секція розсилки -->
+            <!-- Newsletter Section -->
             <section class="newsletter-section">
                 <div class="container">
                     <div class="newsletter-card card text-center">
@@ -324,13 +326,13 @@
                                 <div class="form-group">
                                     <input type="text" class="form-control" id="name" name="name"
                                         placeholder="Your Name" required>
-                                    <div class="error-message">Будь ласка, введіть ваше ім'я</div>
+                                    <div class="error-message">Please enter your name.</div>
                                 </div>
 
                                 <div class="form-group">
                                     <input type="email" class="form-control" id="email" name="email"
                                         placeholder="Your Email" required>
-                                    <div class="error-message">Будь ласка, введіть коректний email</div>
+                                    <div class="error-message">Please enter a valid email.</div>
                                 </div>
                             </div>
 
@@ -349,7 +351,6 @@
             </section>
         </main>
 
-        <!-- Футер -->
         <footer class="footer">
             <div class="footer-buttons">
                 <a href="decoding.html" class="footer-btn btn">Download analyses</a>
@@ -388,14 +389,14 @@
         </footer>
     </div>
 
-    <!-- Секція профілю -->
+    <!-- PROFILE SECTION -->
     <section class="profile-section" id="profile-page" style="display:none;">
+        <!-- Profile content from index.html -->
     </section>
 
-    <!-- JavaScript функціонал -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // Елементи фільтрів
+            // Filters functionality
             const specializationFilter = document.getElementById('specializationFilter');
             const ratingFilter = document.getElementById('ratingFilter');
             const priceFilter = document.getElementById('priceFilter');
@@ -405,7 +406,7 @@
             const subscribeForm = document.getElementById('subscribeForm');
             const successMessage = document.getElementById('successMessage');
 
-            // Фільтрація спеціалістів
+            // Filter specialists
             function filterSpecialists() {
                 const specialization = specializationFilter.value;
                 const minRating = parseFloat(ratingFilter.value) || 0;
@@ -416,18 +417,18 @@
                 specialists.forEach(specialist => {
                     let show = true;
 
-                    // Фільтр спеціалізації
+                    // Specialization filter
                     if (specialization && specialist.dataset.specialization !== specialization) {
                         show = false;
                     }
 
-                    // Фільтр рейтингу
+                    // Rating filter
                     const rating = parseFloat(specialist.dataset.rating);
                     if (minRating > 0 && rating < minRating) {
                         show = false;
                     }
 
-                    // Фільтр ціни
+                    // Price filter
                     if (priceRange) {
                         const price = parseInt(specialist.dataset.price);
                         if (priceRange === '0-800' && price > 800) show = false;
@@ -440,7 +441,7 @@
                 });
             }
 
-            // Обробники подій для фільтрів
+            // Event listeners for filters
             if (specializationFilter) {
                 specializationFilter.addEventListener('change', filterSpecialists);
             }
@@ -459,7 +460,7 @@
                 });
             }
 
-            // Функціонал улюблених
+            // Favorite functionality
             document.querySelectorAll('.favorite-icon').forEach(icon => {
                 icon.addEventListener('click', function () {
                     const heartIcon = this.querySelector('i');
@@ -475,7 +476,7 @@
                 });
             });
 
-            // Кнопки запису на прийом
+            // Book appointment buttons
             document.querySelectorAll('.specialist-actions .btn-primary').forEach(button => {
                 button.addEventListener('click', function () {
                     const specialistName = this.closest('.specialist-card').querySelector('h3').textContent;
@@ -483,7 +484,7 @@
                 });
             });
 
-            // Кнопки перегляду профілю
+            // View profile buttons
             document.querySelectorAll('.specialist-actions .btn-secondary').forEach(button => {
                 button.addEventListener('click', function () {
                     const specialistName = this.closest('.specialist-card').querySelector('h3').textContent;
@@ -491,9 +492,10 @@
                 });
             });
 
-            // Функціонал завантаження ще
+            // Load more functionality
             if (loadMoreBtn) {
                 loadMoreBtn.addEventListener('click', function () {
+                    // Simulate loading more specialists
                     this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Loading...';
                     this.disabled = true;
 
@@ -505,7 +507,7 @@
                 });
             }
 
-            // Підписка на розсилку
+            // Newsletter subscription
             if (subscribeForm) {
                 subscribeForm.addEventListener('submit', function (event) {
                     event.preventDefault();
@@ -514,6 +516,7 @@
                     const email = document.getElementById('email').value.trim();
 
                     if (name && email) {
+                        // Simulate successful subscription
                         successMessage.style.display = 'flex';
                         subscribeForm.reset();
 
@@ -526,6 +529,7 @@
         });
     </script>
     <script src="js/script.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
