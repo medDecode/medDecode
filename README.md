@@ -1,94 +1,114 @@
 # MedDecode
 
-## Опис проєкту
-**MedDecode** - це онлайн-сервіс, який допомагає користувачам швидко розшифрувати результати медичних аналізів.  
-Користувач може ввести свої показники (наприклад, гемоглобін, глюкозу, холестерин тощо), після чого система 
-автоматично порівняє їх із нормами, визначить відхилення (нижче/вище норми) та відобразить результат у зручній формі.  
-Додатково сервіс надає рекомендації щодо того, до якого спеціаліста слід звернутися на основі результатів аналізів.
+## Project Description
+**MedDecode** is an online service that helps users quickly decipher the results of medical tests.
+The user can enter their indicators (for example, hemoglobin, glucose, cholesterol, etc.), after which the system
+will automatically compare them with the norms, determine deviations (below/above the norm) and display the result in a convenient form.
+Additionally, the service provides recommendations on which specialist to contact based on the test results.
 
 ---
 
-## Структура проєкту
-medDecode/                                                               
-|                                                                                  
-|--- css/ # Стилі сайту  
+## Project Structure
+medDecode/                      
+│                                   
+├── css/                         
+│   ├── base.css                  
+│   ├── style.css                       
+│   ├── components.css                        
+│   ├── cross-browser.css                   
+│   ├── grid-layout.css                        
+│   └── layout.css                      
+│                                                 
+├── images/                          
+│                                              
+├── js/                                              
+│   └── script.js                                                 
+│                                                           
+├── index.html                                                   
+├── decoding.html                                           
+├── specialists.html                                       
+├── service.html                                                   
+├── contacts.html                                      
+│                                                  
+└── README.md                                             
 
-      |--- base.css                                                                
-      |--- style.css                                                                
-      |--- components.css                                                                
-      |--- cross-browser.css                                                                
-      |--- grid-layout.css                                                                
-      |--- layout.css                                                                
-|--- images/ # Зображення (іконки, фото лікарів, логотип)                          
-|--- js/ # Скрипти JavaScript               
 
-      |---script.js                                                                           
-|--- index.html # Головна сторінка                                               
-|--- decoding.html # Сторінка розшифрування аналізів                                      
-|--- specialists.html # Сторінка рекомендованих спеціалістів                                         
-|--- service.html # Сторінка сервісів                                                         
-|--- contacts.html # Сторінка контактів                                                          
-|                                                                                              
-|--- README.md # Опис проєкту                                                        
+---
 
-### **CSS Архітектура**
-- Модульна структура - розділення на 'base.css', 'layout.css', 'components.css', 'grid-layout.css', 'style.css', 'cross-browser.css'
-- CSS Grid - для складних макетів (сітки спеціалістів, картки, dashboard)
-- Flexbox - для вирівнювання та розподілу елементів
-- CSS Custom Properties - система змінних для кольорів, відступів, радіусів
+## CSS Architecture
+- Modular structure: `base.css`, `layout.css`, `components.css`, `grid-layout.css`, `style.css`, `cross-browser.css`  
+- CSS Grid for complex layouts (specialist grids, cards, dashboard)  
+- Flexbox for alignment and distribution of elements  
+- CSS Custom Properties (variables for colors, spacing, radii)  
 
-### **Адаптивний дизайн**
-- Mobile-first підхід
-- Медіазапити для різних розширень:
-  - '768px' - планшети
-  - '480px' - мобільні пристрої  
-  - '360px' - малі телефони
-- Viewport units - гнучкі розміри
+---
 
-### **Сучасні CSS можливост**
-- CSS Grid для складних макетів
-- Flexbox для компонентів
-- CSS Variables для дизайн-системи
-- Backdrop-filter для стеклянного ефекту
-- Transform/Transition для анімацій
+## Responsive Design
+- Mobile-first approach  
+- Media queries for different breakpoints:
+  - 768px — tablets  
+  - 480px — mobile devices  
+  - 360px — small phones  
+- Viewport units for flexible sizing  
 
-### **Оптимізація**
-- Ефективні селектори
-- Мінімальне використання !important
-- Оптимізовані медіазапити
-- Правильний порядок CSS правил
+---
 
-### **Підтримка браузерів**
-- Cross-browser сумісність
-- Safari fixes - специфічні виправлення
-- Touch-friendly інтерфейс для мобільних
-- Print styles - оптимізація для друку
+## Modern CSS Features
+- CSS Grid for complex layouts  
+- Flexbox for components  
+- CSS Variables for design systems  
+- Backdrop-filter for glass effect  
+- Transform/Transition for animations  
 
-### **JAVA Архітектура**
-main.js включає такі можливості:
-Маніпуляція DOM
-Зміна стилю елементів за класом.
-Додавання нових елементів у кінець <main>.
-Динамічний контент
-Показ поточної дати у футері.
-Кнопка "Показати більше" для акордеону.
-Події та обробники
-Зміна теми сайту через кнопку (перемикання класу dark-theme).
-Підсвітка меню навігації при наведенні миші.
-Зміна розміру шрифту за клавішами ArrowUp / ArrowDown.
-Форми та валідація
-Заборона стандартного submit.
-Зчитування даних із полів форми.
+---
 
-Клієнтська валідація:
-Ім’я: мінімум 3 символи
-Email: містить @ та домен
-Повідомлення: >= 10 символів
-Підсвічування помилок та показ повідомлення про успішну відправку.
-LocalStorage (бонус)
-Збереження обраної теми сайту (dark / light).
-Можливість зберігати ім’я користувача або динамічні елементи.
+## Optimization
+- Efficient selectors  
+- Minimal use of `!important`  
+- Optimized media queries  
+- Correct order of CSS rules  
 
-## Виконавці
-- **Перевозник Вікторія** - розробниця структури сайту, дизайну та основного функціоналу, верстка, тестування
-- **Ляшенко Олександра** - розробниця структури сайту, дизайну та основного функціоналу, верстка, тестування
+---
+
+## Browser Support
+- Cross-browser compatibility  
+- Specific fixes for Safari  
+- Touch-friendly interface for mobile devices  
+- Print styles for optimized printing  
+
+---
+
+## JavaScript Architecture
+`main.js` includes the following features:
+
+### DOM Manipulation
+- Change element styles by class  
+- Add new elements to `<main>`  
+
+### Dynamic Content
+- Show current date in the footer  
+- "Show more" button for accordion  
+
+### Events and Handlers
+- Change site theme via button (toggle `dark-theme` class)  
+- Highlight navigation menu on mouseover  
+- Change font size using ArrowUp / ArrowDown keys  
+
+### Forms and Validation
+- Prevent default form submission  
+- Read data from form fields  
+- Client-side validation:
+  - Name: at least 3 characters  
+  - Email: must contain `@` and domain  
+  - Message: at least 10 characters  
+- Highlight errors and display success message  
+
+### LocalStorage (Bonus)
+- Save selected site theme (dark / light)  
+- Save username or dynamic elements  
+
+---
+
+## Performers
+- **Perevoznyk Viktoriia** — developer of site structure, design, main functionality, layout, testing  
+- **Lyashenko Oleksandra** — developer of site structure, design, main functionality, layout, testing  
